@@ -118,7 +118,10 @@ namespace calculate
                 {
                     if ((text.Contains("+") || text.Contains("-") || text.Contains("×") || text.Contains("÷")))
                     {
-                        if (commaCount > 1)
+                        char op = Convert.ToChar(operation);
+                        string last_number = text.Split(op).Last();
+
+                        if (last_number.Contains(','))
                         {
                             textEditor.AppendText("");
                         }
@@ -308,11 +311,19 @@ namespace calculate
             {
                 char op = Convert.ToChar(operation);
                 string num2 = total.Split(op).Last();
-                number2 = float.Parse(num2);
+                if (num2.Length > 0)
+                {
+                    number2 = float.Parse(num2);
+                }
+                else
+                {
+                    number2 = 0;
+                }
             }
 
             textEditor.Clear();
             compute(operation);
+            number1 = 0;
         }
 
         private void button_clear_Click(object sender, EventArgs e)
@@ -343,7 +354,10 @@ namespace calculate
         {
             int textLength = textEditor.Text.Length;
             string text = textEditor.Text;
-            text = text.Remove(textLength - 1);
+            if (textLength > 0)
+            {
+                text = text.Remove(textLength - 1);
+            }
             textEditor.Text = text;
         }
 
@@ -451,8 +465,15 @@ namespace calculate
                     textEditor.Text = result.ToString();
                     break;
                 case "÷":
-                    result = number1 / number2;
-                    textEditor.Text = result.ToString();
+                    if (number2 == 0)
+                    {
+                        textEditor.Text = "";
+                    }
+                    else
+                    {
+                        result = number1 / number2;
+                        textEditor.Text = result.ToString();
+                    }
                     break;
                 case "sin":
                     result2 = Math.Sin(number3);
