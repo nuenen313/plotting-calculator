@@ -90,7 +90,6 @@ namespace calculate
 
         private void button_comma_Click(object sender, EventArgs e)
         {
-
             string text = textEditor.Text;
             char lastCharacter = text[text.Length - 1];
             if (text.Length == 0)
@@ -99,9 +98,39 @@ namespace calculate
             }
             else
             {
+                int commaCount = 0;
+                foreach (char c in text)
+                {
+                    if (c == ',')
+                    {
+                        commaCount++;
+                    }
+                }
                 if (lastCharacter == '+' || lastCharacter == '-' || lastCharacter == '×' || lastCharacter == '÷')
                 {
                     textEditor.AppendText("0,");
+                }
+                else if (text.EndsWith(","))
+                {
+                    
+                }
+                else if (text.Contains(","))
+                {
+                    if ((text.Contains("+") || text.Contains("-") || text.Contains("×") || text.Contains("÷")))
+                    {
+                        if (commaCount > 1)
+                        {
+                            textEditor.AppendText("");
+                        }
+                        else
+                        {
+                            textEditor.AppendText(",");
+                        }
+                    }
+                    else
+                    {
+                        textEditor.AppendText("");
+                    }
                 }
                 else
                 {
@@ -269,7 +298,13 @@ namespace calculate
             button_sin.Enabled = true;
             button_cos.Enabled = true;
             string total = textEditor.Text;
-            if (!(operation == "sin" || operation == "cos"))
+            if (operation == null)
+            {
+                operation = "none";
+                number1 = float.Parse(total);
+            }
+
+            if (!(operation == "sin" || operation == "cos" || operation == "none"))
             {
                 char op = Convert.ToChar(operation);
                 string num2 = total.Split(op).Last();
@@ -426,6 +461,10 @@ namespace calculate
                 case "cos":
                     result2 = Math.Cos(number3);
                     textEditor.Text= result2.ToString();
+                    break;
+                case "none":
+                    result = number1;
+                    textEditor.Text = result.ToString();
                     break;
                 default:
                     break;
