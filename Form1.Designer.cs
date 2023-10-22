@@ -72,7 +72,7 @@
             // 
             this.Button1.BackColor = System.Drawing.Color.Black;
             this.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Button1.Location = new System.Drawing.Point(-4, 81);
             this.Button1.Name = "Button1";
@@ -86,7 +86,7 @@
             // 
             this.Button2.BackColor = System.Drawing.Color.Black;
             this.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Button2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Button2.Location = new System.Drawing.Point(67, 81);
             this.Button2.Name = "Button2";
@@ -100,7 +100,7 @@
             // 
             this.Button3.BackColor = System.Drawing.Color.Black;
             this.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Button3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Button3.Location = new System.Drawing.Point(139, 81);
             this.Button3.Name = "Button3";
@@ -114,7 +114,7 @@
             // 
             this.Button5.BackColor = System.Drawing.Color.Black;
             this.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Button5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button5.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Button5.Location = new System.Drawing.Point(280, 81);
             this.Button5.Name = "Button5";
@@ -128,7 +128,7 @@
             // 
             this.Button4.BackColor = System.Drawing.Color.Black;
             this.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Button4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Button4.Location = new System.Drawing.Point(208, 81);
             this.Button4.Name = "Button4";
@@ -142,7 +142,7 @@
             // 
             this.Button9.BackColor = System.Drawing.Color.Black;
             this.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Button9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button9.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button9.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Button9.Location = new System.Drawing.Point(208, 153);
             this.Button9.Name = "Button9";
@@ -156,7 +156,7 @@
             // 
             this.Button10.BackColor = System.Drawing.Color.Black;
             this.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Button10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button10.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button10.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Button10.Location = new System.Drawing.Point(280, 153);
             this.Button10.Name = "Button10";
@@ -170,7 +170,7 @@
             // 
             this.Button8.BackColor = System.Drawing.Color.Black;
             this.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Button8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button8.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button8.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Button8.Location = new System.Drawing.Point(139, 153);
             this.Button8.Name = "Button8";
@@ -184,7 +184,7 @@
             // 
             this.Button7.BackColor = System.Drawing.Color.Black;
             this.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Button7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button7.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button7.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Button7.Location = new System.Drawing.Point(67, 153);
             this.Button7.Name = "Button7";
@@ -198,7 +198,7 @@
             // 
             this.Button6.BackColor = System.Drawing.Color.Black;
             this.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Button6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Button6.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button6.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Button6.Location = new System.Drawing.Point(-4, 153);
             this.Button6.Name = "Button6";
@@ -212,7 +212,7 @@
             // 
             this.button_comma.BackColor = System.Drawing.Color.Black;
             this.button_comma.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_comma.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_comma.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_comma.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button_comma.Location = new System.Drawing.Point(-4, 225);
             this.button_comma.Name = "button_comma";
@@ -227,7 +227,7 @@
             this.button_exit.BackColor = System.Drawing.SystemColors.ControlText;
             this.button_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button_exit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_exit.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_exit.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_exit.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button_exit.Location = new System.Drawing.Point(-4, 378);
             this.button_exit.Name = "button_exit";
@@ -241,7 +241,7 @@
             // 
             this.button_add.BackColor = System.Drawing.Color.Black;
             this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_add.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_add.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_add.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button_add.Location = new System.Drawing.Point(67, 225);
             this.button_add.Name = "button_add";
@@ -255,7 +255,7 @@
             // 
             this.button_subtract.BackColor = System.Drawing.Color.Black;
             this.button_subtract.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_subtract.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_subtract.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_subtract.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button_subtract.Location = new System.Drawing.Point(139, 225);
             this.button_subtract.Name = "button_subtract";
@@ -269,7 +269,7 @@
             // 
             this.button_multiply.BackColor = System.Drawing.Color.Black;
             this.button_multiply.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_multiply.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_multiply.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_multiply.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button_multiply.Location = new System.Drawing.Point(208, 225);
             this.button_multiply.Name = "button_multiply";
@@ -283,7 +283,7 @@
             // 
             this.button_divide.BackColor = System.Drawing.Color.Black;
             this.button_divide.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_divide.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_divide.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_divide.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button_divide.Location = new System.Drawing.Point(280, 225);
             this.button_divide.Name = "button_divide";
@@ -297,7 +297,7 @@
             // 
             this.button_equals.BackColor = System.Drawing.Color.Black;
             this.button_equals.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_equals.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_equals.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_equals.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button_equals.Location = new System.Drawing.Point(-4, 297);
             this.button_equals.Name = "button_equals";
@@ -311,7 +311,7 @@
             // 
             this.button_clear.BackColor = System.Drawing.Color.Black;
             this.button_clear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_clear.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_clear.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_clear.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button_clear.Location = new System.Drawing.Point(67, 297);
             this.button_clear.Name = "button_clear";
@@ -325,7 +325,7 @@
             // 
             this.button_backspace.BackColor = System.Drawing.Color.Black;
             this.button_backspace.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_backspace.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_backspace.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_backspace.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button_backspace.Location = new System.Drawing.Point(139, 297);
             this.button_backspace.Name = "button_backspace";
@@ -339,7 +339,7 @@
             // 
             this.button_sin.BackColor = System.Drawing.Color.Black;
             this.button_sin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_sin.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_sin.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_sin.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button_sin.Location = new System.Drawing.Point(208, 297);
             this.button_sin.Name = "button_sin";
@@ -353,7 +353,7 @@
             // 
             this.button_cos.BackColor = System.Drawing.Color.Black;
             this.button_cos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_cos.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_cos.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_cos.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button_cos.Location = new System.Drawing.Point(280, 297);
             this.button_cos.Name = "button_cos";
@@ -397,6 +397,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
