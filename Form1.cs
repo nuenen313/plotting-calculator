@@ -92,13 +92,14 @@ namespace calculate
         {
 
             string text = textEditor.Text;
+            char lastCharacter = text[text.Length - 1];
             if (text.Length == 0)
             {
                 textEditor.AppendText("0,");
             }
             else
             {
-                if (text.Contains("+") || text.Contains("-") || text.Contains("×") || text.Contains("÷"))
+                if (lastCharacter == '+' || lastCharacter == '-' || lastCharacter == '×' || lastCharacter == '÷')
                 {
                     textEditor.AppendText("0,");
                 }
