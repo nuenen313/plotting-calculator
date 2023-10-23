@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//line() - trzeba zmienić limity i przesunąć wykres; chart(); text(x,y,string); sin((x-1)pi/180); cyfry znaczące; opisy, zaznaczyć pkt
+//3 pola edycyjne na dole i oblicz: ax^2 + bx +c = 0, rysuje funkcję kwadratową i liczy pierwiastki
+//tangens, cotangens
+
 namespace calculate
 {
     public partial class Form1 : Form
@@ -27,7 +31,7 @@ namespace calculate
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (!(e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9) && e.KeyCode != Keys.Oemcomma)
+            if (!(e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9))
             {
                 e.SuppressKeyPress = true;
             }
@@ -142,14 +146,8 @@ namespace calculate
             }
         }
 
-        private void button_exit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void button_add_Click(object sender, EventArgs e)
         {
-            //operation = "+";
             if (textEditor.Text.Length > 0)
             {
                 string text = textEditor.Text;
@@ -182,7 +180,6 @@ namespace calculate
 
         private void button_subtract_Click(object sender, EventArgs e)
         {
-            //operation = "-";
             if (textEditor.Text.Length > 0)
             {
                 string text = textEditor.Text;
@@ -215,7 +212,6 @@ namespace calculate
 
         private void button_multiply_Click(object sender, EventArgs e)
         {
-            //operation = "×";
             if (textEditor.Text.Length > 0)
             {
                 string text = textEditor.Text;
@@ -279,88 +275,6 @@ namespace calculate
             textEditor.AppendText("÷");
         }
 
-        private void button_equals_Click(object sender, EventArgs e)
-        {
-            textEditor.ReadOnly = false;
-            Button1.Enabled = true;
-            Button2.Enabled = true;
-            Button3.Enabled = true;
-            Button4.Enabled = true;
-            Button5.Enabled = true;
-            Button6.Enabled = true;
-            Button7.Enabled = true;
-            Button8.Enabled = true;
-            Button9.Enabled = true;
-            Button10.Enabled = true;
-            button_comma.Enabled = true;
-            button_add.Enabled = true;
-            button_subtract.Enabled = true;
-            button_multiply.Enabled = true;
-            button_divide.Enabled = true;
-            button_backspace.Enabled = true;
-            button_sin.Enabled = true;
-            button_cos.Enabled = true;
-            string total = textEditor.Text;
-            if (operation == null)
-            {
-                operation = "none";
-                number1 = float.Parse(total);
-            }
-
-            if (!(operation == "sin" || operation == "cos" || operation == "none"))
-            {
-                char op = Convert.ToChar(operation);
-                string num2 = total.Split(op).Last();
-                if (num2.Length > 0)
-                {
-                    number2 = float.Parse(num2);
-                }
-                else
-                {
-                    number2 = 0;
-                }
-            }
-
-            textEditor.Clear();
-            compute(operation);
-            number1 = 0;
-        }
-
-        private void button_clear_Click(object sender, EventArgs e)
-        {
-            textEditor.Clear();
-            textEditor.ReadOnly = false;
-            Button1.Enabled = true;
-            Button2.Enabled = true;
-            Button3.Enabled = true;
-            Button4.Enabled = true;
-            Button5.Enabled = true;
-            Button6.Enabled = true;
-            Button7.Enabled = true;
-            Button8.Enabled = true;
-            Button9.Enabled = true;
-            Button10.Enabled = true;
-            button_comma.Enabled = true;
-            button_add.Enabled = true;
-            button_subtract.Enabled = true;
-            button_multiply.Enabled = true;
-            button_divide.Enabled = true;
-            button_backspace.Enabled = true;
-            button_cos.Enabled = true;
-            button_sin.Enabled = true;
-        }
-
-        private void button_backspace_Click(object sender, EventArgs e)
-        {
-            int textLength = textEditor.Text.Length;
-            string text = textEditor.Text;
-            if (textLength > 0)
-            {
-                text = text.Remove(textLength - 1);
-            }
-            textEditor.Text = text;
-        }
-
         private void button_sin_Click(object sender, EventArgs e)
         {
             if (textEditor.Text.Length > 0)
@@ -375,7 +289,8 @@ namespace calculate
                         text = text.Remove(text.Length - 1);
                         textEditor.Text = text;
                     }
-                    if (text.Contains('+')){
+                    if (text.Contains('+'))
+                    {
                         operation = "+";
                         char op = Convert.ToChar(operation);
                         string last_number = text.Split(op).Last();
@@ -443,6 +358,7 @@ namespace calculate
                 Button8.Enabled = false;
                 Button9.Enabled = false;
                 Button10.Enabled = false;
+                button11.Enabled = false;
                 button_comma.Enabled = false;
                 button_add.Enabled = false;
                 button_subtract.Enabled = false;
@@ -538,6 +454,7 @@ namespace calculate
                 Button8.Enabled = false;
                 Button9.Enabled = false;
                 Button10.Enabled = false;
+                button11.Enabled = false;
                 button_comma.Enabled = false;
                 button_add.Enabled = false;
                 button_subtract.Enabled = false;
@@ -547,6 +464,110 @@ namespace calculate
                 button_sin.Enabled = false;
                 button_cos.Enabled = false;
             }
+        }
+
+        private void button_equals_Click(object sender, EventArgs e)
+        {
+            textEditor.ReadOnly = false;
+            Button1.Enabled = true;
+            Button2.Enabled = true;
+            Button3.Enabled = true;
+            Button4.Enabled = true;
+            Button5.Enabled = true;
+            Button6.Enabled = true;
+            Button7.Enabled = true;
+            Button8.Enabled = true;
+            Button9.Enabled = true;
+            Button10.Enabled = true;
+            button11.Enabled = true;
+            button_comma.Enabled = true;
+            button_add.Enabled = true;
+            button_subtract.Enabled = true;
+            button_multiply.Enabled = true;
+            button_divide.Enabled = true;
+            button_backspace.Enabled = true;
+            button_sin.Enabled = true;
+            button_cos.Enabled = true;
+            string total = textEditor.Text;
+            if (operation == null)
+            {
+                operation = "none";
+                number1 = float.Parse(total);
+            }
+
+            if (!(operation == "sin" || operation == "cos" || operation == "none"))
+            {
+                char op = Convert.ToChar(operation);
+                string num2 = total.Split(op).Last();
+                if (num2.Length > 0)
+                {
+                    number2 = float.Parse(num2);
+                }
+                else
+                {
+                    number2 = 0;
+                }
+            }
+
+            textEditor.Clear();
+            compute(operation);
+            number1 = 0;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            string text = textEditor.Text;
+            if (text.Contains('+') || text.Contains('×') || text.Contains('s') || text.Contains('÷'))
+            {
+            }
+            else if (text.StartsWith("-"))
+            {
+                text = text.Remove(0, 1);
+                textEditor.Text = text;
+            }
+            else if (text.Contains('-'))
+            {
+            }
+            else
+            {
+                textEditor.Text = "-" + text;
+            }
+        }
+
+        private void button_clear_Click(object sender, EventArgs e)
+        {
+            textEditor.Clear();
+            textEditor.ReadOnly = false;
+            Button1.Enabled = true;
+            Button2.Enabled = true;
+            Button3.Enabled = true;
+            Button4.Enabled = true;
+            Button5.Enabled = true;
+            Button6.Enabled = true;
+            Button7.Enabled = true;
+            Button8.Enabled = true;
+            Button9.Enabled = true;
+            Button10.Enabled = true;
+            button11.Enabled = true;
+            button_comma.Enabled = true;
+            button_add.Enabled = true;
+            button_subtract.Enabled = true;
+            button_multiply.Enabled = true;
+            button_divide.Enabled = true;
+            button_backspace.Enabled = true;
+            button_cos.Enabled = true;
+            button_sin.Enabled = true;
+        }
+
+        private void button_backspace_Click(object sender, EventArgs e)
+        {
+            int textLength = textEditor.Text.Length;
+            string text = textEditor.Text;
+            if (textLength > 0)
+            {
+                text = text.Remove(textLength - 1);
+            }
+            textEditor.Text = text;
         }
 
         public void compute(string operation)
@@ -590,26 +611,6 @@ namespace calculate
                     break;
                 default:
                     break;
-            }
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            string text = textEditor.Text;
-            if (text.Contains('+') || text.Contains('×') || text.Contains('s') || text.Contains('÷'))
-            {
-            }
-            else if (text.StartsWith("-"))
-            {
-                text = text.Remove(0, 1);
-                textEditor.Text = text;
-            }
-            else if (text.Contains('-'))
-            {
-            }
-            else
-            {
-                textEditor.Text = "-" + text;
             }
         }
     }
