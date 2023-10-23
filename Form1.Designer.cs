@@ -51,6 +51,7 @@
             this.button_backspace = new System.Windows.Forms.Button();
             this.button_sin = new System.Windows.Forms.Button();
             this.button_cos = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textEditor
@@ -363,6 +364,20 @@
             this.button_cos.UseVisualStyleBackColor = false;
             this.button_cos.Click += new System.EventHandler(this.button_cos_Click);
             // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.Black;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button11.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button11.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button11.Location = new System.Drawing.Point(67, 361);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(75, 75);
+            this.button11.TabIndex = 23;
+            this.button11.Text = "±";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -370,6 +385,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(358, 432);
             this.ControlBox = false;
+            this.Controls.Add(this.button11);
             this.Controls.Add(this.button_cos);
             this.Controls.Add(this.button_sin);
             this.Controls.Add(this.button_backspace);
@@ -427,6 +443,7 @@
         private System.Windows.Forms.Button button_backspace;
         private System.Windows.Forms.Button button_sin;
         private System.Windows.Forms.Button button_cos;
+        private System.Windows.Forms.Button button11;
     }
 }
 

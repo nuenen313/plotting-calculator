@@ -368,10 +368,60 @@ namespace calculate
                 operation = "sin";
                 string text = textEditor.Text;
                 char lastElement = text[text.Length - 1];
-                if (lastElement == '+' || lastElement == '-' || lastElement == '×' || lastElement == '÷')
+                if (text.Contains('+') || text.Contains('-') || text.Contains('×') || text.Contains('÷'))
                 {
-                    text = text.Remove(text.Length - 1);
-                    textEditor.Text = text;
+                    if (lastElement == '+' || lastElement == '-' || lastElement == '×' || lastElement == '÷')
+                    {
+                        text = text.Remove(text.Length - 1);
+                        textEditor.Text = text;
+                    }
+                    if (text.Contains('+')){
+                        operation = "+";
+                        char op = Convert.ToChar(operation);
+                        string last_number = text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                        compute(operation);
+                        number3 = double.Parse(textEditor.Text);
+                        operation = "sin";
+                        string last_number2 = textEditor.Text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                    }
+                    if (text.Contains('-'))
+                    {
+                        operation = "-";
+                        char op = Convert.ToChar(operation);
+                        string last_number = text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                        compute(operation);
+                        number3 = double.Parse(textEditor.Text);
+                        operation = "sin";
+                        string last_number2 = textEditor.Text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                    }
+                    if (text.Contains('×'))
+                    {
+                        operation = "×";
+                        char op = Convert.ToChar(operation);
+                        string last_number = text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                        compute(operation);
+                        number3 = double.Parse(textEditor.Text);
+                        operation = "sin";
+                        string last_number2 = textEditor.Text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                    }
+                    if (text.Contains('÷'))
+                    {
+                        operation = "÷";
+                        char op = Convert.ToChar(operation);
+                        string last_number = text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                        compute(operation);
+                        number3 = double.Parse(textEditor.Text);
+                        operation = "sin";
+                        string last_number2 = textEditor.Text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                    }
                 }
                 if (textEditor.Text.Length == 0)
                 {
@@ -411,10 +461,61 @@ namespace calculate
                 operation = "cos";
                 string text = textEditor.Text;
                 char lastElement = text[text.Length - 1];
-                if (lastElement == '+' || lastElement == '-' || lastElement == '×' || lastElement == '÷')
+                if (text.Contains('+') || text.Contains('-') || text.Contains('×') || text.Contains('÷'))
                 {
-                    text = text.Remove(text.Length - 1);
-                    textEditor.Text = text;
+                    if (lastElement == '+' || lastElement == '-' || lastElement == '×' || lastElement == '÷')
+                    {
+                        text = text.Remove(text.Length - 1);
+                        textEditor.Text = text;
+                    }
+                    if (text.Contains('+'))
+                    {
+                        operation = "+";
+                        char op = Convert.ToChar(operation);
+                        string last_number = text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                        compute(operation);
+                        number3 = double.Parse(textEditor.Text);
+                        operation = "cos";
+                        string last_number2 = textEditor.Text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                    }
+                    if (text.Contains('-'))
+                    {
+                        operation = "-";
+                        char op = Convert.ToChar(operation);
+                        string last_number = text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                        compute(operation);
+                        number3 = double.Parse(textEditor.Text);
+                        operation = "cos";
+                        string last_number2 = textEditor.Text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                    }
+                    if (text.Contains('×'))
+                    {
+                        operation = "×";
+                        char op = Convert.ToChar(operation);
+                        string last_number = text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                        compute(operation);
+                        number3 = double.Parse(textEditor.Text);
+                        operation = "cos";
+                        string last_number2 = textEditor.Text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                    }
+                    if (text.Contains('÷'))
+                    {
+                        operation = "÷";
+                        char op = Convert.ToChar(operation);
+                        string last_number = text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                        compute(operation);
+                        number3 = double.Parse(textEditor.Text);
+                        operation = "cos";
+                        string last_number2 = textEditor.Text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                    }
                 }
                 if (textEditor.Text.Length == 0)
                 {
@@ -489,6 +590,26 @@ namespace calculate
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            string text = textEditor.Text;
+            if (text.Contains('+') || text.Contains('×') || text.Contains('s') || text.Contains('÷'))
+            {
+            }
+            else if (text.StartsWith("-"))
+            {
+                text = text.Remove(0, 1);
+                textEditor.Text = text;
+            }
+            else if (text.Contains('-'))
+            {
+            }
+            else
+            {
+                textEditor.Text = "-" + text;
             }
         }
     }
