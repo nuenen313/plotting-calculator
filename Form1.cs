@@ -95,13 +95,13 @@ namespace calculate
         private void button_comma_Click(object sender, EventArgs e)
         {
             string text = textEditor.Text;
-            char lastCharacter = text[text.Length - 1];
             if (text.Length == 0)
             {
                 textEditor.AppendText("0,");
             }
             else
             {
+                char lastCharacter = text[text.Length - 1];
                 int commaCount = 0;
                 foreach (char c in text)
                 {
