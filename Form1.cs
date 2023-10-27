@@ -24,9 +24,9 @@ namespace calculate
         //variables
         float number1;
         float number2;
-        double number3;
-        double result2;
-        string operation;
+        public static double number3;
+        public static double result2;
+        public static string operation;
         float result;
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
@@ -600,10 +600,12 @@ namespace calculate
                 case "sin":
                     result2 = Math.Sin(number3);
                     textEditor.Text = result2.ToString();
+                    plot();
                     break;
                 case "cos":
                     result2 = Math.Cos(number3);
                     textEditor.Text= result2.ToString();
+                    plot();
                     break;
                 case "none":
                     result = number1;
@@ -612,6 +614,12 @@ namespace calculate
                 default:
                     break;
             }
+        }
+
+        public void plot()
+        {
+            Form2 plottingForm = new Form2();
+            plottingForm.Show();
         }
     }
 }

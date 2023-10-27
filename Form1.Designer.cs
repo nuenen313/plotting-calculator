@@ -70,6 +70,7 @@
             // 
             // Button1
             // 
+            this.Button1.AutoSize = true;
             this.Button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
             this.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -84,6 +85,7 @@
             // 
             // Button2
             // 
+            this.Button2.AutoSize = true;
             this.Button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
             this.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -98,6 +100,7 @@
             // 
             // Button3
             // 
+            this.Button3.AutoSize = true;
             this.Button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
             this.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button3.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -112,6 +115,7 @@
             // 
             // Button5
             // 
+            this.Button5.AutoSize = true;
             this.Button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
             this.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button5.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -126,6 +130,7 @@
             // 
             // Button4
             // 
+            this.Button4.AutoSize = true;
             this.Button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
             this.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button4.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -140,6 +145,7 @@
             // 
             // Button9
             // 
+            this.Button9.AutoSize = true;
             this.Button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
             this.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button9.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -168,6 +174,7 @@
             // 
             // Button8
             // 
+            this.Button8.AutoSize = true;
             this.Button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
             this.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button8.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -182,6 +189,7 @@
             // 
             // Button7
             // 
+            this.Button7.AutoSize = true;
             this.Button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
             this.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button7.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -196,6 +204,7 @@
             // 
             // Button6
             // 
+            this.Button6.AutoSize = true;
             this.Button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
             this.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button6.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -210,6 +219,7 @@
             // 
             // button_comma
             // 
+            this.button_comma.AutoSize = true;
             this.button_comma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.button_comma.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_comma.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -224,6 +234,7 @@
             // 
             // button_add
             // 
+            this.button_add.AutoSize = true;
             this.button_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_add.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -238,6 +249,7 @@
             // 
             // button_subtract
             // 
+            this.button_subtract.AutoSize = true;
             this.button_subtract.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.button_subtract.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_subtract.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -252,6 +264,7 @@
             // 
             // button_multiply
             // 
+            this.button_multiply.AutoSize = true;
             this.button_multiply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.button_multiply.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_multiply.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -280,6 +293,7 @@
             // 
             // button_equals
             // 
+            this.button_equals.AutoSize = true;
             this.button_equals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.button_equals.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_equals.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -294,6 +308,7 @@
             // 
             // button_clear
             // 
+            this.button_clear.AutoSize = true;
             this.button_clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.button_clear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_clear.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -308,6 +323,7 @@
             // 
             // button_backspace
             // 
+            this.button_backspace.AutoSize = true;
             this.button_backspace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.button_backspace.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_backspace.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -336,6 +352,7 @@
             // 
             // button_cos
             // 
+            this.button_cos.AutoSize = true;
             this.button_cos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.button_cos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_cos.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -364,10 +381,10 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(355, 456);
+            this.ClientSize = new System.Drawing.Size(356, 492);
             this.Controls.Add(this.button_cos);
             this.Controls.Add(this.button_sin);
             this.Controls.Add(this.button_backspace);
@@ -392,7 +409,7 @@
             this.Controls.Add(this.button11);
             this.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
