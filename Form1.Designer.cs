@@ -51,6 +51,10 @@
             this.button_sin = new System.Windows.Forms.Button();
             this.button_cos = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.button_tg = new System.Windows.Forms.Button();
+            this.button_ctg = new System.Windows.Forms.Button();
+            this.button_pi = new System.Windows.Forms.Button();
+            this.button_e = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textEditor
@@ -379,12 +383,72 @@
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
+            // button_tg
+            // 
+            this.button_tg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.button_tg.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_tg.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_tg.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button_tg.Location = new System.Drawing.Point(208, 369);
+            this.button_tg.Name = "button_tg";
+            this.button_tg.Size = new System.Drawing.Size(75, 75);
+            this.button_tg.TabIndex = 24;
+            this.button_tg.Text = "tg";
+            this.button_tg.UseVisualStyleBackColor = false;
+            this.button_tg.Click += new System.EventHandler(this.button_tg_Click);
+            // 
+            // button_ctg
+            // 
+            this.button_ctg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.button_ctg.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_ctg.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_ctg.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button_ctg.Location = new System.Drawing.Point(280, 369);
+            this.button_ctg.Name = "button_ctg";
+            this.button_ctg.Size = new System.Drawing.Size(75, 75);
+            this.button_ctg.TabIndex = 25;
+            this.button_ctg.Text = "ctg";
+            this.button_ctg.UseVisualStyleBackColor = false;
+            this.button_ctg.Click += new System.EventHandler(this.button_ctg_Click);
+            // 
+            // button_pi
+            // 
+            this.button_pi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.button_pi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_pi.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_pi.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button_pi.Location = new System.Drawing.Point(139, 369);
+            this.button_pi.Name = "button_pi";
+            this.button_pi.Size = new System.Drawing.Size(75, 75);
+            this.button_pi.TabIndex = 27;
+            this.button_pi.Text = "π";
+            this.button_pi.UseVisualStyleBackColor = false;
+            this.button_pi.Click += new System.EventHandler(this.button_pi_Click);
+            // 
+            // button_e
+            // 
+            this.button_e.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.button_e.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_e.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_e.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button_e.Location = new System.Drawing.Point(67, 369);
+            this.button_e.Name = "button_e";
+            this.button_e.Size = new System.Drawing.Size(75, 75);
+            this.button_e.TabIndex = 28;
+            this.button_e.Text = "e";
+            this.button_e.UseVisualStyleBackColor = false;
+            this.button_e.Click += new System.EventHandler(this.button_e_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(356, 492);
+            this.Controls.Add(this.button_e);
+            this.Controls.Add(this.button_pi);
+            this.Controls.Add(this.button_ctg);
+            this.Controls.Add(this.button_tg);
             this.Controls.Add(this.button_cos);
             this.Controls.Add(this.button_sin);
             this.Controls.Add(this.button_backspace);
@@ -443,6 +507,10 @@
         private System.Windows.Forms.Button button_sin;
         private System.Windows.Forms.Button button_cos;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button_tg;
+        private System.Windows.Forms.Button button_ctg;
+        private System.Windows.Forms.Button button_pi;
+        private System.Windows.Forms.Button button_e;
     }
 }
 

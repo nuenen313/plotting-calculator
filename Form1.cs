@@ -92,6 +92,16 @@ namespace calculate
             textEditor.Text = textEditor.Text + "0";
         }
 
+        private void button_pi_Click(object sender, EventArgs e)
+        {
+            textEditor.Text = textEditor.Text + (Math.PI).ToString();
+        }
+
+        private void button_e_Click(object sender, EventArgs e)
+        {
+            textEditor.Text = textEditor.Text + (Math.E).ToString();
+        }
+
         private void button_comma_Click(object sender, EventArgs e)
         {
             string text = textEditor.Text;
@@ -367,6 +377,10 @@ namespace calculate
                 button_backspace.Enabled = false;
                 button_cos.Enabled = false;
                 button_sin.Enabled = false;
+                button_pi.Enabled = false;
+                button_e.Enabled = false;
+                button_tg.Enabled = false;
+                button_ctg.Enabled = false;
             }
         }
 
@@ -463,6 +477,208 @@ namespace calculate
                 button_backspace.Enabled = false;
                 button_sin.Enabled = false;
                 button_cos.Enabled = false;
+                button_pi.Enabled = false;
+                button_e.Enabled = false;
+                button_tg.Enabled = false;
+                button_ctg.Enabled = false;
+            }
+        }
+
+        private void button_tg_Click(object sender, EventArgs e)
+        {
+            if (textEditor.Text.Length > 0)
+            {
+                operation = "tg";
+                string text = textEditor.Text;
+                char lastElement = text[text.Length - 1];
+                if (text.Contains('+') || text.Contains('-') || text.Contains('×') || text.Contains('÷'))
+                {
+                    if (lastElement == '+' || lastElement == '-' || lastElement == '×' || lastElement == '÷')
+                    {
+                        text = text.Remove(text.Length - 1);
+                        textEditor.Text = text;
+                    }
+                    if (text.Contains('+'))
+                    {
+                        operation = "+";
+                        char op = Convert.ToChar(operation);
+                        string last_number = text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                        compute(operation);
+                        number3 = double.Parse(textEditor.Text);
+                        operation = "tg";
+                        string last_number2 = textEditor.Text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                    }
+                    if (text.Contains('-'))
+                    {
+                        operation = "-";
+                        char op = Convert.ToChar(operation);
+                        string last_number = text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                        compute(operation);
+                        number3 = double.Parse(textEditor.Text);
+                        operation = "tg";
+                        string last_number2 = textEditor.Text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                    }
+                    if (text.Contains('×'))
+                    {
+                        operation = "×";
+                        char op = Convert.ToChar(operation);
+                        string last_number = text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                        compute(operation);
+                        number3 = double.Parse(textEditor.Text);
+                        operation = "tg";
+                        string last_number2 = textEditor.Text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                    }
+                    if (text.Contains('÷'))
+                    {
+                        operation = "÷";
+                        char op = Convert.ToChar(operation);
+                        string last_number = text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                        compute(operation);
+                        number3 = double.Parse(textEditor.Text);
+                        operation = "tg";
+                        string last_number2 = textEditor.Text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                    }
+                }
+                if (textEditor.Text.Length == 0)
+                {
+                    number3 = 0;
+                }
+                else
+                {
+                    number3 = double.Parse(textEditor.Text);
+                }
+                textEditor.Text = "tg(" + Convert.ToString(number3) + ")";
+                textEditor.ReadOnly = true;
+                Button1.Enabled = false;
+                Button2.Enabled = false;
+                Button3.Enabled = false;
+                Button4.Enabled = false;
+                Button5.Enabled = false;
+                Button6.Enabled = false;
+                Button7.Enabled = false;
+                Button8.Enabled = false;
+                Button9.Enabled = false;
+                Button10.Enabled = false;
+                button11.Enabled = false;
+                button_comma.Enabled = false;
+                button_add.Enabled = false;
+                button_subtract.Enabled = false;
+                button_multiply.Enabled = false;
+                button_divide.Enabled = false;
+                button_backspace.Enabled = false;
+                button_cos.Enabled = false;
+                button_sin.Enabled = false;
+                button_pi.Enabled = false;
+                button_e.Enabled = false;
+                button_tg.Enabled = false;
+                button_ctg.Enabled = false;
+            }
+        }
+
+        private void button_ctg_Click(object sender, EventArgs e)
+        {
+            if (textEditor.Text.Length > 0)
+            {
+                operation = "ctg";
+                string text = textEditor.Text;
+                char lastElement = text[text.Length - 1];
+                if (text.Contains('+') || text.Contains('-') || text.Contains('×') || text.Contains('÷'))
+                {
+                    if (lastElement == '+' || lastElement == '-' || lastElement == '×' || lastElement == '÷')
+                    {
+                        text = text.Remove(text.Length - 1);
+                        textEditor.Text = text;
+                    }
+                    if (text.Contains('+'))
+                    {
+                        operation = "+";
+                        char op = Convert.ToChar(operation);
+                        string last_number = text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                        compute(operation);
+                        number3 = double.Parse(textEditor.Text);
+                        operation = "ctg";
+                        string last_number2 = textEditor.Text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                    }
+                    if (text.Contains('-'))
+                    {
+                        operation = "-";
+                        char op = Convert.ToChar(operation);
+                        string last_number = text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                        compute(operation);
+                        number3 = double.Parse(textEditor.Text);
+                        operation = "ctg";
+                        string last_number2 = textEditor.Text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                    }
+                    if (text.Contains('×'))
+                    {
+                        operation = "×";
+                        char op = Convert.ToChar(operation);
+                        string last_number = text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                        compute(operation);
+                        number3 = double.Parse(textEditor.Text);
+                        operation = "ctg";
+                        string last_number2 = textEditor.Text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                    }
+                    if (text.Contains('÷'))
+                    {
+                        operation = "÷";
+                        char op = Convert.ToChar(operation);
+                        string last_number = text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                        compute(operation);
+                        number3 = double.Parse(textEditor.Text);
+                        operation = "ctg";
+                        string last_number2 = textEditor.Text.Split(op).Last();
+                        number2 = (float)Convert.ToDouble(last_number);
+                    }
+                }
+                if (textEditor.Text.Length == 0)
+                {
+                    number3 = 0;
+                }
+                else
+                {
+                    number3 = double.Parse(textEditor.Text);
+                }
+                textEditor.Text = "ctg(" + Convert.ToString(number3) + ")";
+                textEditor.ReadOnly = true;
+                Button1.Enabled = false;
+                Button2.Enabled = false;
+                Button3.Enabled = false;
+                Button4.Enabled = false;
+                Button5.Enabled = false;
+                Button6.Enabled = false;
+                Button7.Enabled = false;
+                Button8.Enabled = false;
+                Button9.Enabled = false;
+                Button10.Enabled = false;
+                button11.Enabled = false;
+                button_comma.Enabled = false;
+                button_add.Enabled = false;
+                button_subtract.Enabled = false;
+                button_multiply.Enabled = false;
+                button_divide.Enabled = false;
+                button_backspace.Enabled = false;
+                button_cos.Enabled = false;
+                button_sin.Enabled = false;
+                button_pi.Enabled = false;
+                button_e.Enabled = false;
+                button_tg.Enabled = false;
+                button_ctg.Enabled = false;
             }
         }
 
@@ -488,6 +704,10 @@ namespace calculate
             button_backspace.Enabled = true;
             button_sin.Enabled = true;
             button_cos.Enabled = true;
+            button_pi.Enabled = true;
+            button_e.Enabled = true;
+            button_tg.Enabled = true;
+            button_ctg.Enabled = true;
             string total = textEditor.Text;
             if (operation == null)
             {
@@ -495,7 +715,7 @@ namespace calculate
                 number1 = float.Parse(total);
             }
 
-            if (!(operation == "sin" || operation == "cos" || operation == "none"))
+            if (!(operation == "sin" || operation == "cos" || operation == "none" || operation == "rad" || operation == "tg" || operation == "ctg"))
             {
                 char op = Convert.ToChar(operation);
                 string num2 = total.Split(op).Last();
@@ -557,6 +777,10 @@ namespace calculate
             button_backspace.Enabled = true;
             button_cos.Enabled = true;
             button_sin.Enabled = true;
+            button_pi.Enabled = true;
+            button_e.Enabled = true;
+            button_tg.Enabled = true;
+            button_ctg.Enabled = true;
         }
 
         private void button_backspace_Click(object sender, EventArgs e)
@@ -598,14 +822,28 @@ namespace calculate
                     }
                     break;
                 case "sin":
-                    result2 = Math.Sin(number3);
+                    result2 = Math.Sin(number3 * Math.PI / 180);
                     textEditor.Text = result2.ToString();
                     plot();
                     break;
                 case "cos":
-                    result2 = Math.Cos(number3);
+                    result2 = Math.Cos(number3 * Math.PI / 180);
                     textEditor.Text= result2.ToString();
                     plot();
+                    break;
+                case "tg":
+                    result2 = Math.Tan(number3 * Math.PI / 180);
+                    textEditor.Text = result2.ToString();
+                    plot();
+                    break;
+                case "ctg":
+                    result2 = 1/Math.Tan(number3 * Math.PI / 180);
+                    textEditor.Text = result2.ToString();
+                    plot();
+                    break;
+                case "rad":
+                    result2 = number3 * Math.PI / 180;
+                    textEditor.Text = result2.ToString();
                     break;
                 case "none":
                     result = number1;
