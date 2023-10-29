@@ -20,8 +20,6 @@ namespace calculate
 
         public static double Ymaximum = 1.5;
         public static double Yminimum = -1.5;
-        public static double YmaximumTan = 20;
-        public static double YminimumTan = -20;
 
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -42,10 +40,11 @@ namespace calculate
             chart1.ChartAreas.Add(new ChartArea());
 
             var series = new Series("Points");
-            var dataSeriesList = new List<Series>();
-            var currentSeries = new Series();
             List<double> xPoints = new List<double>();
             List<double> yPoints = new List<double>();
+            var seriesBefore = new Series("Smaller");
+            var seriesAfter = new Series("Larger");
+
             for (double x = number3_angles - 290; x < number3_angles + 290; x += Math.PI )
             {
                 switch (operation)
@@ -74,6 +73,7 @@ namespace calculate
                         break;
                 }
             }
+
             if (operation == "sin" || operation == "cos")
             {
                 series.Points.DataBindXY(xPoints, yPoints);
@@ -155,6 +155,13 @@ namespace calculate
             {
                 List<double> xPoints1 = new List<double>();
                 List<double> yPoints1 = new List<double>();
+
+                List<double> xPoints2 = new List<double>();
+                List<double> yPoints2 = new List<double>();
+
+                List<double> xPoints3 = new List<double>();
+                List<double> yPoints3 = new List<double>();
+
                 double start_x = 0;
                 double end_x = 0;
 
@@ -176,7 +183,7 @@ namespace calculate
 
                         }
 
-                        for (double x = Math.Round(start_x, 4) + 0.001; x < end_x; x += Math.PI / 180)
+                        for (double x = Math.Round(start_x, 4) + 0.001; x < end_x; x += Math.PI / 280)
                         {
                             xPoints1.Add(x);
                         }
@@ -185,6 +192,27 @@ namespace calculate
                         {
                             yPoints1.Add(1 / Math.Tan(xPoint));
                         }
+
+                        for (double x = Math.Round(start_x, 4) - Math.PI + 0.0001; x < start_x; x += Math.PI / 280)
+                        {
+                            xPoints2.Add(x);
+                        }
+
+                        foreach (double xPoint in xPoints2)
+                        {
+                            yPoints2.Add(1 / Math.Tan(xPoint));
+                        }
+
+                        for (double x = Math.Round(start_x, 4) + Math.PI + 0.0001; x < end_x + Math.PI; x += Math.PI / 280)
+                        {
+                            xPoints3.Add(x);
+                        }
+
+                        foreach (double xPoint in xPoints3)
+                        {
+                            yPoints3.Add(1 / Math.Tan(xPoint));
+                        }
+
 
                         break;
                     case "tg":
@@ -203,7 +231,7 @@ namespace calculate
 
                         }
 
-                        for (double x = Math.Round(start_x, 4) + 0.001; x < end_x; x += Math.PI / 180)
+                        for (double x = Math.Round(start_x, 4) + 0.001; x < end_x; x += Math.PI / 280)
                         {
                             xPoints1.Add(x);
                         }
@@ -212,14 +240,56 @@ namespace calculate
                         {
                             yPoints1.Add(Math.Tan(xPoint));
                         }
+
+                        for (double x = Math.Round(start_x, 4) - Math.PI + 0.0001; x < start_x; x += Math.PI / 280)
+                        {
+                            xPoints2.Add(x);
+                        }
+
+                        foreach (double xPoint in xPoints2)
+                        {
+                            yPoints2.Add(Math.Tan(xPoint));
+                        }
+
+                        for (double x = Math.Round(start_x, 4) + Math.PI + 0.0001; x < end_x + Math.PI; x += Math.PI / 280)
+                        {
+                            xPoints3.Add(x);
+                        }
+
+                        foreach (double xPoint in xPoints3)
+                        {
+                            yPoints3.Add(Math.Tan(xPoint));
+                        }
+
                         break;
                 }
 
                 List<double> xPoints1_angles = new List<double>();
+                List<double> xPoints2_angles = new List<double>();
+                List<double> xPoints3_angles = new List<double>();
+
                 foreach (double xPoint in xPoints1)
                 {
                     xPoints1_angles.Add(xPoint*180/Math.PI);
                 }
+
+                foreach (double xPoint in xPoints2)
+                {
+                    xPoints2_angles.Add(xPoint * 180 / Math.PI);
+                }
+
+                foreach (double xPoint in xPoints3)
+                {
+                    xPoints3_angles.Add(xPoint * 180 / Math.PI);
+                }
+
+                seriesBefore.Points.DataBindXY(xPoints2_angles, yPoints2);
+                seriesAfter.Points.DataBindXY(xPoints3_angles, yPoints3);
+                chart1.Series.Add(seriesBefore);
+                seriesBefore.ChartType = SeriesChartType.Line;
+                chart1.Series.Add(seriesAfter);
+                seriesAfter.ChartType = SeriesChartType.Line;
+
 
                 series.Points.DataBindXY(xPoints1_angles, yPoints1);
                 chart1.Series.Add(series);
@@ -235,7 +305,7 @@ namespace calculate
                 chart1.Series["Result"].MarkerColor = Color.Red;
 
                 var seriesLineX = new Series("Horizontal Line");
-                seriesLineX.Points.AddXY(start_x*180/Math.PI, result2);
+                seriesLineX.Points.AddXY(start_x*180/Math.PI - 180, result2);
                 seriesLineX.Points.AddXY(number3_angles, result2);
                 seriesLineX.ChartType = SeriesChartType.Line;
                 chart1.Series.Add(seriesLineX);
@@ -244,7 +314,7 @@ namespace calculate
                 chart1.Series["Horizontal Line"].Color = Color.Red;
 
                 var seriesLineY = new Series("Vertical Line");
-                seriesLineY.Points.AddXY(number3_angles, YminimumTan);
+                seriesLineY.Points.AddXY(number3_angles, -Math.Round(Math.Abs(result2)) - 10);
                 seriesLineY.Points.AddXY(number3_angles, result2);
                 seriesLineY.ChartType = SeriesChartType.Line;
                 chart1.Series.Add(seriesLineY);
@@ -252,17 +322,23 @@ namespace calculate
                 chart1.Series["Vertical Line"].BorderDashStyle = ChartDashStyle.Dash;
                 chart1.Series["Vertical Line"].Color = Color.Red;
 
-                //chart1.Series["Points"].BorderWidth = 2;
+                chart1.Series["Points"].BorderWidth = 2;
+                chart1.Series["Points"].Color = Color.MediumBlue;
+                chart1.Series["Smaller"].Color = Color.MediumBlue;
+                chart1.Series["Larger"].Color = Color.MediumBlue;
+                chart1.Series["Smaller"].BorderWidth = 2;
+                chart1.Series["Larger"].BorderWidth = 2;
+
                 chart1.Location = new System.Drawing.Point(0, 0);
                 chart1.Size = new System.Drawing.Size(600, 500);
                 chart1.ChartAreas[0].AxisX.LabelStyle.Format = "0.00";
                 chart1.ChartAreas[0].AxisX.Title = "x (degrees)";
                 chart1.ChartAreas[0].AxisY.Title = title;
 
-                chart1.ChartAreas[0].AxisY.Maximum = YmaximumTan;
-                chart1.ChartAreas[0].AxisY.Minimum = YminimumTan;
-                chart1.ChartAreas[0].AxisX.Maximum = end_x*180/Math.PI;
-                chart1.ChartAreas[0].AxisX.Minimum = start_x*180/Math.PI;
+                chart1.ChartAreas[0].AxisY.Maximum = Math.Round(Math.Abs(result2))+10;
+                chart1.ChartAreas[0].AxisY.Minimum = -Math.Round(Math.Abs(result2))-5;
+                chart1.ChartAreas[0].AxisX.Maximum = end_x*180/Math.PI + 180;
+                chart1.ChartAreas[0].AxisX.Minimum = start_x*180/Math.PI - 180;
                 chart1.Titles.Add(PlotTitle);
 
                 this.Controls.Add(chart1);
@@ -276,7 +352,7 @@ namespace calculate
                 TextAnnotationX.AxisX = chart1.ChartAreas[0].AxisX;
                 TextAnnotationX.AxisY = chart1.ChartAreas[0].AxisY;
                 TextAnnotationX.X = number3_angles;
-                TextAnnotationX.Y = YminimumTan+2;
+                TextAnnotationX.Y = -Math.Round(Math.Abs(result2))+5;
                 TextAnnotationX.ForeColor = Color.Red;
                 TextAnnotationX.Visible = true;
                 chart1.Annotations.Add(TextAnnotationX);
@@ -287,7 +363,7 @@ namespace calculate
                 TextAnnotationY.AnchorDataPoint = MyDataPoint;
                 TextAnnotationY.AxisX = chart1.ChartAreas[0].AxisX;
                 TextAnnotationY.AxisY = chart1.ChartAreas[0].AxisY;
-                TextAnnotationY.X = start_x*180/Math.PI;
+                TextAnnotationY.X = start_x*180/Math.PI - Math.PI;
                 TextAnnotationY.Y = result2;
                 TextAnnotationY.ForeColor = Color.Red;
                 TextAnnotationY.Visible = true;
