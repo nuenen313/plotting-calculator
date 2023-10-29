@@ -67,7 +67,7 @@
             this.textEditor.Multiline = true;
             this.textEditor.Name = "textEditor";
             this.textEditor.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textEditor.Size = new System.Drawing.Size(367, 77);
+            this.textEditor.Size = new System.Drawing.Size(367, 101);
             this.textEditor.TabIndex = 0;
             this.textEditor.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textEditor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
@@ -79,7 +79,7 @@
             this.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Button1.Location = new System.Drawing.Point(-4, 81);
+            this.Button1.Location = new System.Drawing.Point(-6, 105);
             this.Button1.Name = "Button1";
             this.Button1.Size = new System.Drawing.Size(75, 75);
             this.Button1.TabIndex = 2;
@@ -94,7 +94,7 @@
             this.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Button2.Location = new System.Drawing.Point(67, 81);
+            this.Button2.Location = new System.Drawing.Point(65, 105);
             this.Button2.Name = "Button2";
             this.Button2.Size = new System.Drawing.Size(75, 75);
             this.Button2.TabIndex = 3;
@@ -109,7 +109,7 @@
             this.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button3.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Button3.Location = new System.Drawing.Point(139, 81);
+            this.Button3.Location = new System.Drawing.Point(137, 105);
             this.Button3.Name = "Button3";
             this.Button3.Size = new System.Drawing.Size(75, 75);
             this.Button3.TabIndex = 4;
@@ -124,7 +124,7 @@
             this.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button5.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Button5.Location = new System.Drawing.Point(280, 81);
+            this.Button5.Location = new System.Drawing.Point(278, 105);
             this.Button5.Name = "Button5";
             this.Button5.Size = new System.Drawing.Size(75, 75);
             this.Button5.TabIndex = 5;
@@ -139,7 +139,7 @@
             this.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button4.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Button4.Location = new System.Drawing.Point(208, 81);
+            this.Button4.Location = new System.Drawing.Point(206, 105);
             this.Button4.Name = "Button4";
             this.Button4.Size = new System.Drawing.Size(75, 75);
             this.Button4.TabIndex = 6;
@@ -154,7 +154,7 @@
             this.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button9.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Button9.Location = new System.Drawing.Point(208, 153);
+            this.Button9.Location = new System.Drawing.Point(206, 177);
             this.Button9.Name = "Button9";
             this.Button9.Size = new System.Drawing.Size(75, 75);
             this.Button9.TabIndex = 11;
@@ -168,7 +168,7 @@
             this.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button10.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Button10.Location = new System.Drawing.Point(280, 153);
+            this.Button10.Location = new System.Drawing.Point(278, 177);
             this.Button10.Name = "Button10";
             this.Button10.Size = new System.Drawing.Size(75, 75);
             this.Button10.TabIndex = 10;
@@ -183,7 +183,7 @@
             this.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button8.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Button8.Location = new System.Drawing.Point(139, 153);
+            this.Button8.Location = new System.Drawing.Point(137, 177);
             this.Button8.Name = "Button8";
             this.Button8.Size = new System.Drawing.Size(75, 75);
             this.Button8.TabIndex = 9;
@@ -198,7 +198,7 @@
             this.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button7.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Button7.Location = new System.Drawing.Point(67, 153);
+            this.Button7.Location = new System.Drawing.Point(65, 177);
             this.Button7.Name = "Button7";
             this.Button7.Size = new System.Drawing.Size(75, 75);
             this.Button7.TabIndex = 8;
@@ -213,7 +213,7 @@
             this.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Button6.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Button6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Button6.Location = new System.Drawing.Point(-4, 153);
+            this.Button6.Location = new System.Drawing.Point(-6, 177);
             this.Button6.Name = "Button6";
             this.Button6.Size = new System.Drawing.Size(75, 75);
             this.Button6.TabIndex = 7;
@@ -228,7 +228,7 @@
             this.button_comma.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_comma.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_comma.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_comma.Location = new System.Drawing.Point(-4, 225);
+            this.button_comma.Location = new System.Drawing.Point(-6, 249);
             this.button_comma.Name = "button_comma";
             this.button_comma.Size = new System.Drawing.Size(75, 75);
             this.button_comma.TabIndex = 12;
@@ -243,7 +243,7 @@
             this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_add.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_add.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_add.Location = new System.Drawing.Point(67, 225);
+            this.button_add.Location = new System.Drawing.Point(65, 249);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(75, 75);
             this.button_add.TabIndex = 14;
@@ -258,7 +258,7 @@
             this.button_subtract.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_subtract.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_subtract.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_subtract.Location = new System.Drawing.Point(139, 225);
+            this.button_subtract.Location = new System.Drawing.Point(137, 249);
             this.button_subtract.Name = "button_subtract";
             this.button_subtract.Size = new System.Drawing.Size(75, 75);
             this.button_subtract.TabIndex = 15;
@@ -273,7 +273,7 @@
             this.button_multiply.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_multiply.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_multiply.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_multiply.Location = new System.Drawing.Point(208, 225);
+            this.button_multiply.Location = new System.Drawing.Point(206, 249);
             this.button_multiply.Name = "button_multiply";
             this.button_multiply.Size = new System.Drawing.Size(75, 75);
             this.button_multiply.TabIndex = 16;
@@ -287,7 +287,7 @@
             this.button_divide.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_divide.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_divide.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_divide.Location = new System.Drawing.Point(280, 225);
+            this.button_divide.Location = new System.Drawing.Point(278, 249);
             this.button_divide.Name = "button_divide";
             this.button_divide.Size = new System.Drawing.Size(75, 75);
             this.button_divide.TabIndex = 17;
@@ -302,7 +302,7 @@
             this.button_equals.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_equals.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_equals.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_equals.Location = new System.Drawing.Point(-4, 297);
+            this.button_equals.Location = new System.Drawing.Point(-6, 321);
             this.button_equals.Name = "button_equals";
             this.button_equals.Size = new System.Drawing.Size(75, 75);
             this.button_equals.TabIndex = 18;
@@ -317,7 +317,7 @@
             this.button_clear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_clear.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_clear.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_clear.Location = new System.Drawing.Point(67, 297);
+            this.button_clear.Location = new System.Drawing.Point(65, 321);
             this.button_clear.Name = "button_clear";
             this.button_clear.Size = new System.Drawing.Size(75, 75);
             this.button_clear.TabIndex = 19;
@@ -332,7 +332,7 @@
             this.button_backspace.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_backspace.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_backspace.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_backspace.Location = new System.Drawing.Point(139, 297);
+            this.button_backspace.Location = new System.Drawing.Point(137, 321);
             this.button_backspace.Name = "button_backspace";
             this.button_backspace.Size = new System.Drawing.Size(75, 75);
             this.button_backspace.TabIndex = 20;
@@ -346,7 +346,7 @@
             this.button_sin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_sin.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_sin.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_sin.Location = new System.Drawing.Point(208, 297);
+            this.button_sin.Location = new System.Drawing.Point(206, 321);
             this.button_sin.Name = "button_sin";
             this.button_sin.Size = new System.Drawing.Size(75, 75);
             this.button_sin.TabIndex = 21;
@@ -361,7 +361,7 @@
             this.button_cos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_cos.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_cos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_cos.Location = new System.Drawing.Point(280, 297);
+            this.button_cos.Location = new System.Drawing.Point(278, 321);
             this.button_cos.Name = "button_cos";
             this.button_cos.Size = new System.Drawing.Size(75, 75);
             this.button_cos.TabIndex = 22;
@@ -375,7 +375,7 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button11.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button11.Location = new System.Drawing.Point(-4, 369);
+            this.button11.Location = new System.Drawing.Point(-6, 393);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(75, 75);
             this.button11.TabIndex = 23;
@@ -389,7 +389,7 @@
             this.button_tg.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_tg.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_tg.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_tg.Location = new System.Drawing.Point(208, 369);
+            this.button_tg.Location = new System.Drawing.Point(206, 393);
             this.button_tg.Name = "button_tg";
             this.button_tg.Size = new System.Drawing.Size(75, 75);
             this.button_tg.TabIndex = 24;
@@ -403,7 +403,7 @@
             this.button_ctg.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_ctg.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_ctg.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_ctg.Location = new System.Drawing.Point(280, 369);
+            this.button_ctg.Location = new System.Drawing.Point(278, 393);
             this.button_ctg.Name = "button_ctg";
             this.button_ctg.Size = new System.Drawing.Size(75, 75);
             this.button_ctg.TabIndex = 25;
@@ -417,7 +417,7 @@
             this.button_pi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_pi.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_pi.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_pi.Location = new System.Drawing.Point(139, 369);
+            this.button_pi.Location = new System.Drawing.Point(137, 393);
             this.button_pi.Name = "button_pi";
             this.button_pi.Size = new System.Drawing.Size(75, 75);
             this.button_pi.TabIndex = 27;
@@ -431,7 +431,7 @@
             this.button_e.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_e.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_e.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_e.Location = new System.Drawing.Point(67, 369);
+            this.button_e.Location = new System.Drawing.Point(65, 393);
             this.button_e.Name = "button_e";
             this.button_e.Size = new System.Drawing.Size(75, 75);
             this.button_e.TabIndex = 28;
