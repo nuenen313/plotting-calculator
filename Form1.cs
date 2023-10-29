@@ -358,33 +358,11 @@ namespace calculate
                 }
                 textEditor.Text = "sin(" + Convert.ToString(number3) + ")";
                 textEditor.ReadOnly = true;
-                Button1.Enabled = false;
-                Button2.Enabled = false;
-                Button3.Enabled = false;
-                Button4.Enabled = false;
-                Button5.Enabled = false;
-                Button6.Enabled = false;
-                Button7.Enabled = false;
-                Button8.Enabled = false;
-                Button9.Enabled = false;
-                Button10.Enabled = false;
-                button11.Enabled = false;
-                button_comma.Enabled = false;
-                button_add.Enabled = false;
-                button_subtract.Enabled = false;
-                button_multiply.Enabled = false;
-                button_divide.Enabled = false;
-                button_backspace.Enabled = false;
-                button_cos.Enabled = false;
-                button_sin.Enabled = false;
-                button_pi.Enabled = false;
-                button_e.Enabled = false;
-                button_tg.Enabled = false;
-                button_ctg.Enabled = false;
+                disableButtons();
             }
         }
 
-        private void button_cos_Click(object sender, EventArgs e)
+        private void button_cos_Click(object sender, EventArgs e) 
         {
             if (textEditor.Text.Length > 0)
             {
@@ -458,29 +436,7 @@ namespace calculate
                 textEditor.Text = "cos(" + Convert.ToString(number3) + ")";
                 textEditor.ReadOnly = true;
                 textEditor.ReadOnly = true;
-                Button1.Enabled = false;
-                Button2.Enabled = false;
-                Button3.Enabled = false;
-                Button4.Enabled = false;
-                Button5.Enabled = false;
-                Button6.Enabled = false;
-                Button7.Enabled = false;
-                Button8.Enabled = false;
-                Button9.Enabled = false;
-                Button10.Enabled = false;
-                button11.Enabled = false;
-                button_comma.Enabled = false;
-                button_add.Enabled = false;
-                button_subtract.Enabled = false;
-                button_multiply.Enabled = false;
-                button_divide.Enabled = false;
-                button_backspace.Enabled = false;
-                button_sin.Enabled = false;
-                button_cos.Enabled = false;
-                button_pi.Enabled = false;
-                button_e.Enabled = false;
-                button_tg.Enabled = false;
-                button_ctg.Enabled = false;
+                disableButtons();
             }
         }
 
@@ -557,29 +513,7 @@ namespace calculate
                 }
                 textEditor.Text = "tg(" + Convert.ToString(number3) + ")";
                 textEditor.ReadOnly = true;
-                Button1.Enabled = false;
-                Button2.Enabled = false;
-                Button3.Enabled = false;
-                Button4.Enabled = false;
-                Button5.Enabled = false;
-                Button6.Enabled = false;
-                Button7.Enabled = false;
-                Button8.Enabled = false;
-                Button9.Enabled = false;
-                Button10.Enabled = false;
-                button11.Enabled = false;
-                button_comma.Enabled = false;
-                button_add.Enabled = false;
-                button_subtract.Enabled = false;
-                button_multiply.Enabled = false;
-                button_divide.Enabled = false;
-                button_backspace.Enabled = false;
-                button_cos.Enabled = false;
-                button_sin.Enabled = false;
-                button_pi.Enabled = false;
-                button_e.Enabled = false;
-                button_tg.Enabled = false;
-                button_ctg.Enabled = false;
+                disableButtons();
             }
         }
 
@@ -656,58 +590,14 @@ namespace calculate
                 }
                 textEditor.Text = "ctg(" + Convert.ToString(number3) + ")";
                 textEditor.ReadOnly = true;
-                Button1.Enabled = false;
-                Button2.Enabled = false;
-                Button3.Enabled = false;
-                Button4.Enabled = false;
-                Button5.Enabled = false;
-                Button6.Enabled = false;
-                Button7.Enabled = false;
-                Button8.Enabled = false;
-                Button9.Enabled = false;
-                Button10.Enabled = false;
-                button11.Enabled = false;
-                button_comma.Enabled = false;
-                button_add.Enabled = false;
-                button_subtract.Enabled = false;
-                button_multiply.Enabled = false;
-                button_divide.Enabled = false;
-                button_backspace.Enabled = false;
-                button_cos.Enabled = false;
-                button_sin.Enabled = false;
-                button_pi.Enabled = false;
-                button_e.Enabled = false;
-                button_tg.Enabled = false;
-                button_ctg.Enabled = false;
+                disableButtons();
             }
         }
 
         private void button_equals_Click(object sender, EventArgs e)
         {
             textEditor.ReadOnly = false;
-            Button1.Enabled = true;
-            Button2.Enabled = true;
-            Button3.Enabled = true;
-            Button4.Enabled = true;
-            Button5.Enabled = true;
-            Button6.Enabled = true;
-            Button7.Enabled = true;
-            Button8.Enabled = true;
-            Button9.Enabled = true;
-            Button10.Enabled = true;
-            button11.Enabled = true;
-            button_comma.Enabled = true;
-            button_add.Enabled = true;
-            button_subtract.Enabled = true;
-            button_multiply.Enabled = true;
-            button_divide.Enabled = true;
-            button_backspace.Enabled = true;
-            button_sin.Enabled = true;
-            button_cos.Enabled = true;
-            button_pi.Enabled = true;
-            button_e.Enabled = true;
-            button_tg.Enabled = true;
-            button_ctg.Enabled = true;
+            enableButtons();
             string total = textEditor.Text;
             if (operation == null)
             {
@@ -758,6 +648,49 @@ namespace calculate
         {
             textEditor.Clear();
             textEditor.ReadOnly = false;
+            enableButtons();
+        }
+
+        private void button_backspace_Click(object sender, EventArgs e)
+        {
+            int textLength = textEditor.Text.Length;
+            string text = textEditor.Text;
+            if (textLength > 0)
+            {
+                text = text.Remove(textLength - 1);
+            }
+            textEditor.Text = text;
+        }
+
+        private void disableButtons()
+        {
+            Button1.Enabled = false;
+            Button2.Enabled = false;
+            Button3.Enabled = false;
+            Button4.Enabled = false;
+            Button5.Enabled = false;
+            Button6.Enabled = false;
+            Button7.Enabled = false;
+            Button8.Enabled = false;
+            Button9.Enabled = false;
+            Button10.Enabled = false;
+            button11.Enabled = false;
+            button_comma.Enabled = false;
+            button_add.Enabled = false;
+            button_subtract.Enabled = false;
+            button_multiply.Enabled = false;
+            button_divide.Enabled = false;
+            button_backspace.Enabled = false;
+            button_cos.Enabled = false;
+            button_sin.Enabled = false;
+            button_pi.Enabled = false;
+            button_e.Enabled = false;
+            button_tg.Enabled = false;
+            button_ctg.Enabled = false;
+        }
+
+        private void enableButtons()
+        {
             Button1.Enabled = true;
             Button2.Enabled = true;
             Button3.Enabled = true;
@@ -775,23 +708,12 @@ namespace calculate
             button_multiply.Enabled = true;
             button_divide.Enabled = true;
             button_backspace.Enabled = true;
-            button_cos.Enabled = true;
             button_sin.Enabled = true;
+            button_cos.Enabled = true;
             button_pi.Enabled = true;
             button_e.Enabled = true;
             button_tg.Enabled = true;
             button_ctg.Enabled = true;
-        }
-
-        private void button_backspace_Click(object sender, EventArgs e)
-        {
-            int textLength = textEditor.Text.Length;
-            string text = textEditor.Text;
-            if (textLength > 0)
-            {
-                text = text.Remove(textLength - 1);
-            }
-            textEditor.Text = text;
         }
 
         public void compute(string operation)
@@ -832,18 +754,32 @@ namespace calculate
                     plot();
                     break;
                 case "tg":
-                    result2 = Math.Tan(number3 * Math.PI / 180);
-                    textEditor.Text = result2.ToString();
-                    plot();
+                    if (number3%90 == 0)
+                    {
+                        textEditor.Text = "x value out of the function domain";
+                        textEditor.ReadOnly = true;
+                        disableButtons();
+                    }
+                    else
+                    {
+                        result2 = Math.Tan(number3 * Math.PI / 180);
+                        textEditor.Text = result2.ToString();
+                        plot();
+                    }
                     break;
                 case "ctg":
-                    result2 = 1/Math.Tan(number3 * Math.PI / 180);
-                    textEditor.Text = result2.ToString();
-                    plot();
-                    break;
-                case "rad":
-                    result2 = number3 * Math.PI / 180;
-                    textEditor.Text = result2.ToString();
+                    if (number3%180 == 0 || number3 == 0)
+                    {
+                        textEditor.Text = "x value out of the function domain";
+                        textEditor.ReadOnly = true;
+                        disableButtons();
+                    }
+                    else
+                    {
+                        result2 = 1 / Math.Tan(number3 * Math.PI / 180);
+                        textEditor.Text = result2.ToString();
+                        plot();
+                    }
                     break;
                 case "none":
                     result = number1;
