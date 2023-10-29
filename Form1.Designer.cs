@@ -55,6 +55,7 @@
             this.button_ctg = new System.Windows.Forms.Button();
             this.button_pi = new System.Windows.Forms.Button();
             this.button_e = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textEditor
@@ -439,12 +440,28 @@
             this.button_e.UseVisualStyleBackColor = false;
             this.button_e.Click += new System.EventHandler(this.button_e_Click);
             // 
+            // button12
+            // 
+            this.button12.AutoSize = true;
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button12.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button12.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button12.Location = new System.Drawing.Point(-4, 468);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(357, 62);
+            this.button12.TabIndex = 37;
+            this.button12.Text = "Quadratic equation";
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(356, 492);
+            this.ClientSize = new System.Drawing.Size(349, 532);
+            this.Controls.Add(this.button12);
             this.Controls.Add(this.button_e);
             this.Controls.Add(this.button_pi);
             this.Controls.Add(this.button_ctg);
@@ -511,6 +528,7 @@
         private System.Windows.Forms.Button button_ctg;
         private System.Windows.Forms.Button button_pi;
         private System.Windows.Forms.Button button_e;
+        private System.Windows.Forms.Button button12;
     }
 }
 
