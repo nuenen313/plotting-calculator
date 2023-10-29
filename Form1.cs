@@ -21,12 +21,14 @@ namespace calculate
             InitializeComponent();
         }
 
-        //variables
         float number1;
         float number2;
         public static double number3;
         public static double result2;
         public static string operation;
+        public static double a;
+        public static double b;
+        public static double c;
         float result;
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
@@ -762,7 +764,7 @@ namespace calculate
                     }
                     else
                     {
-                        result2 = Math.Tan(number3 * Math.PI / 180);
+                        result2 = Math.Round(Math.Tan(number3 * Math.PI / 180), 10);
                         textEditor.Text = result2.ToString();
                         plot();
                     }
@@ -776,7 +778,7 @@ namespace calculate
                     }
                     else
                     {
-                        result2 = 1 / Math.Tan(number3 * Math.PI / 180);
+                        result2 = Math.Round(1 / Math.Tan(number3 * Math.PI / 180), 10);
                         textEditor.Text = result2.ToString();
                         plot();
                     }
@@ -794,6 +796,13 @@ namespace calculate
         {
             Form2 plottingForm = new Form2();
             plottingForm.Show();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Form3 equationForm = new Form3();
+            equationForm.Show();
+            //operation = "quad";
         }
     }
 }
