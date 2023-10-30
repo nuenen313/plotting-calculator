@@ -41,7 +41,6 @@ namespace calculate
             text = plot(operation, result2, number3, number3_angles, a, b, c, text);
         }
 
-
         public string plot(string operation, double result2, double number3, double number3_angles, double a, double b, double c, string text)
         {
             string title = "";
@@ -100,6 +99,7 @@ namespace calculate
 
             return text;
         }
+
         public void plot_sin_cos(List<double> xPoints, List<double> yPoints, double number3_angles, double result2, string title, string PlotTitle)
         {
             var chart1 = new Chart();
@@ -141,7 +141,7 @@ namespace calculate
             chart1.Series["Points"].BorderWidth = 2;
             chart1.Location = new System.Drawing.Point(0, 0);
             chart1.Size = new System.Drawing.Size(600, 300);
-            chart1.ChartAreas[0].AxisX.LabelStyle.Format = "0.00";
+            chart1.ChartAreas[0].AxisX.LabelStyle.Format = "0.";
             chart1.ChartAreas[0].AxisX.Title = "x (degrees)";
             chart1.ChartAreas[0].AxisY.Title = title;
 
@@ -149,7 +149,15 @@ namespace calculate
             chart1.ChartAreas[0].AxisY.Minimum = Yminimum;
             chart1.ChartAreas[0].AxisX.Maximum = number3_angles + 290;
             chart1.ChartAreas[0].AxisX.Minimum = number3_angles - 290;
-            chart1.Titles.Add(PlotTitle);
+
+            Title title0 = new Title();
+            title0.Font = new Font("Century Gothic", 12, FontStyle.Regular);
+            title0.Text = PlotTitle;
+            chart1.Titles.Add(title0);
+            chart1.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Century Gothic", 10, FontStyle.Regular);
+            chart1.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Century Gothic", 10, FontStyle.Regular);
+            chart1.ChartAreas[0].AxisX.TitleFont = new Font("Century Gothic", 11, FontStyle.Regular);
+            chart1.ChartAreas[0].AxisY.TitleFont = new Font("Century Gothic", 11, FontStyle.Regular);
 
             var MyDataPoint = new DataPoint(0, 0);
 
@@ -163,6 +171,7 @@ namespace calculate
             TextAnnotationX.Y = -1.2;
             TextAnnotationX.ForeColor = Color.Red;
             TextAnnotationX.Visible = true;
+            TextAnnotationX.Font = new Font("Century Gothic", 11, FontStyle.Regular);
             chart1.Annotations.Add(TextAnnotationX);
 
             var TextAnnotationY = new TextAnnotation();
@@ -175,6 +184,7 @@ namespace calculate
             TextAnnotationY.Y = result2;
             TextAnnotationY.ForeColor = Color.Red;
             TextAnnotationY.Visible = true;
+            TextAnnotationY.Font = new Font("Century Gothic", 11, FontStyle.Regular);
             chart1.Annotations.Add(TextAnnotationY);
 
             var seriesXAxis = new Series("XAxis");
@@ -239,7 +249,7 @@ namespace calculate
 
                     }
 
-                    for (double x = Math.Round(start_x, 4) + 0.001; x < end_x; x += Math.PI / 280)
+                    for (double x = Math.Round(start_x, 4) + 0.001; x < end_x; x += Math.PI / 4000)
                     {
                         xPoints1.Add(x);
                     }
@@ -249,7 +259,7 @@ namespace calculate
                         yPoints1.Add(1 / Math.Tan(xPoint));
                     }
 
-                    for (double x = Math.Round(start_x, 4) - Math.PI + 0.0001; x < start_x; x += Math.PI / 280)
+                    for (double x = Math.Round(start_x, 4) - Math.PI + 0.0001; x < start_x; x += Math.PI / 4000)
                     {
                         xPoints2.Add(x);
                     }
@@ -259,7 +269,7 @@ namespace calculate
                         yPoints2.Add(1 / Math.Tan(xPoint));
                     }
 
-                    for (double x = Math.Round(start_x, 4) + Math.PI + 0.0001; x < end_x + Math.PI; x += Math.PI / 280)
+                    for (double x = Math.Round(start_x, 4) + Math.PI + 0.0001; x < end_x + Math.PI; x += Math.PI / 4000)
                     {
                         xPoints3.Add(x);
                     }
@@ -287,7 +297,7 @@ namespace calculate
 
                     }
 
-                    for (double x = Math.Round(start_x, 4) + 0.001; x < end_x; x += Math.PI / 280)
+                    for (double x = Math.Round(start_x, 4) + 0.001; x < end_x; x += Math.PI / 4000)
                     {
                         xPoints1.Add(x);
                     }
@@ -297,7 +307,7 @@ namespace calculate
                         yPoints1.Add(Math.Tan(xPoint));
                     }
 
-                    for (double x = Math.Round(start_x, 4) - Math.PI + 0.0001; x < start_x; x += Math.PI / 280)
+                    for (double x = Math.Round(start_x, 4) - Math.PI + 0.0001; x < start_x; x += Math.PI / 4000)
                     {
                         xPoints2.Add(x);
                     }
@@ -307,7 +317,7 @@ namespace calculate
                         yPoints2.Add(Math.Tan(xPoint));
                     }
 
-                    for (double x = Math.Round(start_x, 4) + Math.PI + 0.0001; x < end_x + Math.PI; x += Math.PI / 280)
+                    for (double x = Math.Round(start_x, 4) + Math.PI + 0.0001; x < end_x + Math.PI; x += Math.PI / 4000)
                     {
                         xPoints3.Add(x);
                     }
@@ -387,15 +397,24 @@ namespace calculate
 
             chart1.Location = new System.Drawing.Point(0, 0);
             chart1.Size = new System.Drawing.Size(600, 500);
-            chart1.ChartAreas[0].AxisX.LabelStyle.Format = "0.00";
+            chart1.ChartAreas[0].AxisX.LabelStyle.Format = "0.";
             chart1.ChartAreas[0].AxisX.Title = "x (degrees)";
+            chart1.ChartAreas[0].AxisX.TitleFont = new Font("Century Gothic", 11, FontStyle.Regular);
+            chart1.ChartAreas[0].AxisY.TitleFont = new Font("Century Gothic", 11, FontStyle.Regular);
+            Title title_x = new Title();
             chart1.ChartAreas[0].AxisY.Title = title;
+
 
             chart1.ChartAreas[0].AxisY.Maximum = Math.Round(Math.Abs(result2)) + 10;
             chart1.ChartAreas[0].AxisY.Minimum = -Math.Round(Math.Abs(result2)) - 5;
             chart1.ChartAreas[0].AxisX.Maximum = end_x * 180 / Math.PI + 180;
             chart1.ChartAreas[0].AxisX.Minimum = start_x * 180 / Math.PI - 180;
-            chart1.Titles.Add(PlotTitle);
+            Title title1 = new Title();
+            title1.Font = new Font("Century Gothic", 12, FontStyle.Regular);
+            title1.Text = PlotTitle;
+            chart1.Titles.Add(title1);
+            chart1.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Century Gothic", 10, FontStyle.Regular);
+            chart1.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Century Gothic", 10, FontStyle.Regular);
 
             this.Controls.Add(chart1);
 
@@ -408,9 +427,10 @@ namespace calculate
             TextAnnotationX.AxisX = chart1.ChartAreas[0].AxisX;
             TextAnnotationX.AxisY = chart1.ChartAreas[0].AxisY;
             TextAnnotationX.X = number3_angles;
-            TextAnnotationX.Y = -Math.Round(Math.Abs(result2)) - 5;
+            TextAnnotationX.Y = -Math.Round(Math.Abs(result2)) - 3;
             TextAnnotationX.ForeColor = Color.Red;
             TextAnnotationX.Visible = true;
+            TextAnnotationX.Font = new Font("Century Gothic", 11, FontStyle.Regular);
             chart1.Annotations.Add(TextAnnotationX);
 
             var TextAnnotationY = new TextAnnotation();
@@ -419,10 +439,11 @@ namespace calculate
             TextAnnotationY.AnchorDataPoint = MyDataPoint;
             TextAnnotationY.AxisX = chart1.ChartAreas[0].AxisX;
             TextAnnotationY.AxisY = chart1.ChartAreas[0].AxisY;
-            TextAnnotationY.X = start_x * 180 / Math.PI - Math.PI;
+            TextAnnotationY.X = start_x * 180 / Math.PI - 180;
             TextAnnotationY.Y = result2;
             TextAnnotationY.ForeColor = Color.Red;
             TextAnnotationY.Visible = true;
+            TextAnnotationY.Font = new Font("Century Gothic", 11, FontStyle.Regular);
             chart1.Annotations.Add(TextAnnotationY);
 
             var seriesXAxis = new Series("XAxis");
@@ -456,7 +477,27 @@ namespace calculate
             string a_string = a.ToString("N2");
             string b_string = b.ToString("N2");
             string c_string = c.ToString("N2");
-            string PlotTitle = "y = " + a_string + "x^2 + " + b_string + "x + " + c_string;
+            string PlotTitle = "";
+            if (c >= 0 && b >= 0)
+            {
+                PlotTitle = "y = " + a_string + "x^2 + " + b_string + "x + " + c_string;
+            }
+            else if (c >= 0 && b < 0)
+            {
+                PlotTitle = "y = " + a_string + "x^2 " + b_string + "x + " + c_string;
+            }
+            else if (c < 0 && b >= 0)
+            {
+                PlotTitle = "y = " + a_string + "x^2 + " + b_string + "x " + c_string;
+            }
+            else if (c < 0 && b < 0)
+            {
+                PlotTitle = "y = " + a_string + "x^2 " + b_string + "x " + c_string;
+            }
+            else
+            {
+                PlotTitle = "y = " + a_string + "x^2 + " + b_string + "x + " + c_string;
+            }
             chart1.Series.Clear();
             chart1.ChartAreas.Add(new ChartArea());
             chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.LightGray;
@@ -521,6 +562,7 @@ namespace calculate
                 TextAnnotation0.Y = Math.Round(yValues.Min()) - 10;
                 TextAnnotation0.ForeColor = Color.Red;
                 TextAnnotation0.Visible = true;
+                TextAnnotation0.Font = new Font("Century Gothic", 11, FontStyle.Regular);
                 chart1.Annotations.Add(TextAnnotation0);
 
                 text = "Root: " + answer0Text;
@@ -578,6 +620,7 @@ namespace calculate
                 TextAnnotation1.Y = Math.Round(yValues.Min());
                 TextAnnotation1.ForeColor = Color.Red;
                 TextAnnotation1.Visible = true;
+                TextAnnotation1.Font = new Font("Century Gothic", 11, FontStyle.Regular);
                 chart1.Annotations.Add(TextAnnotation1);
 
                 var TextAnnotation2 = new TextAnnotation();
@@ -590,6 +633,7 @@ namespace calculate
                 TextAnnotation2.Y = Math.Round(yValues.Min());
                 TextAnnotation2.ForeColor = Color.Red;
                 TextAnnotation2.Visible = true;
+                TextAnnotation2.Font = new Font("Century Gothic", 11, FontStyle.Regular);
                 chart1.Annotations.Add(TextAnnotation2);
 
                 text = "Root 1: " + answer1Text + ", root 2: " + answer2Text;
@@ -619,11 +663,18 @@ namespace calculate
             seriesQuadratic.ChartType = SeriesChartType.Line;
 
             chart1.Location = new System.Drawing.Point(0, 0);
-            chart1.Size = new System.Drawing.Size(600, 300);
-            chart1.ChartAreas[0].AxisX.LabelStyle.Format = "0.00";
+            chart1.Size = new System.Drawing.Size(600, 600);
+            chart1.ChartAreas[0].AxisX.LabelStyle.Format = "0.";
             chart1.ChartAreas[0].AxisX.Title = "x";
             chart1.ChartAreas[0].AxisY.Title = "y";
-            chart1.Titles.Add(PlotTitle);
+            Title title = new Title();
+            title.Font = new Font("Century Gothic", 12, FontStyle.Regular);
+            title.Text = PlotTitle;
+            chart1.Titles.Add(title);
+            chart1.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Century Gothic", 10, FontStyle.Regular);
+            chart1.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Century Gothic", 10, FontStyle.Regular);
+            chart1.ChartAreas[0].AxisX.TitleFont = new Font("Century Gothic", 11, FontStyle.Regular);
+            chart1.ChartAreas[0].AxisY.TitleFont = new Font("Century Gothic", 11, FontStyle.Regular);
 
             chart1.ChartAreas[0].AxisY.Minimum = yLim;
             chart1.ChartAreas[0].AxisY.Maximum = Math.Round(yValues.Max())+50;
