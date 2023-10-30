@@ -13,5 +13,8 @@ To access the quadratic equation solver, the user has to click the "Quadratic eq
 
 The text boxes take numerical values, minus and comma as input. If the given function has no real roots, the function will still be plotted, and a message that no real roots exist will be displayed.
 
-![image](https://github.com/nuenen313/Calculator/assets/129689130/0708c5ce-8c2c-4854-8f2a-6f346f616900)
 
+![image](https://github.com/nuenen313/Calculator/assets/129689130/82945074-7324-4805-9589-4ddd824fed12)
+
+
+![image](https://github.com/nuenen313/Calculator/assets/129689130/01cff76d-fffd-45fe-9488-17d5cbe71d6a)
