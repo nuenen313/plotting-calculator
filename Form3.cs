@@ -31,37 +31,72 @@ namespace calculate
             {
                 e.SuppressKeyPress = true;
             }
+            else if (textBox_a.Text.Contains(',') && e.KeyCode == Keys.Oemcomma)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox_b_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!(e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9 || e.KeyCode == Keys.Oemcomma || e.KeyCode == Keys.Back || e.KeyCode == Keys.OemMinus))
+            {
+                e.SuppressKeyPress = true;
+            }
+            else if (textBox_b.Text.Contains(',') && e.KeyCode == Keys.Oemcomma)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox_c_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!(e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9 || e.KeyCode == Keys.Oemcomma || e.KeyCode == Keys.Back || e.KeyCode == Keys.OemMinus))
+            {
+                e.SuppressKeyPress = true;
+            }
+            else if (textBox_c.Text.Contains(',') && e.KeyCode == Keys.Oemcomma)
+            {
+                e.SuppressKeyPress = true;
+            }
         }
 
         private void button_quadratic_Click(object sender, EventArgs e)
         {
-            textEditor.ReadOnly = false;
-            operation = "quad";
-            if (textBox_a.Text.Length > 0)
+            if (textBox_a.Text.Length > 20 || textBox_b.Text.Length > 20 || textBox_c.Text.Length > 20)
             {
-                a = double.Parse(textBox_a.Text);
+                textEditor.Text = "Value is too large to compute";
             }
             else
             {
-                a = 0;
+                textEditor.ReadOnly = false;
+                operation = "quad";
+                if (textBox_a.Text.Length > 0)
+                {
+                    a = double.Parse(textBox_a.Text);
+                }
+                else
+                {
+                    a = 0;
+                }
+                if (textBox_b.Text.Length > 0)
+                {
+                    b = double.Parse(textBox_b.Text);
+                }
+                else
+                {
+                    b = 0;
+                }
+                if (textBox_c.Text.Length > 0)
+                {
+                    c = double.Parse(textBox_c.Text);
+                }
+                else
+                {
+                    c = 0;
+                }
+                compute();
             }
-            if (textBox_b.Text.Length > 0)
-            {
-                b = double.Parse(textBox_b.Text);
-            }
-            else
-            {
-                b = 0;
-            }
-            if (textBox_c.Text.Length > 0)
-            {
-                c = double.Parse(textBox_c.Text);
-            }
-            else
-            {
-                c = 0;
-            }
-            compute();
         }
 
         public void compute()
