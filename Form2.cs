@@ -507,7 +507,6 @@ namespace calculate
             double delta = (b * b) - 4 * a * c;
             double xLimMax;
             double xLimMin;
-            double yLim;
 
             var seriesQuadratic = new Series("Quadratic");
             List<double> xValues = new List<double>();
@@ -531,7 +530,6 @@ namespace calculate
 
                 text = "No real roots";
 
-                yLim = 0;
             }
             else if (delta == 0)
             {
@@ -541,8 +539,8 @@ namespace calculate
                     xValues.Add(x);
                     yValues.Add(a * x * x + b * x + c);
                 }
-                xLimMax = Math.Round(answer0) + 20;
-                xLimMin = Math.Round(answer0) - 20;
+                xLimMax = Math.Round(xValues.Max() + 10);
+                xLimMin = Math.Round(xValues.Min() - 10);
 
                 seriesAnswer0.Points.AddXY(answer0, 0);
                 seriesAnswer0.ChartType = SeriesChartType.Point;
@@ -559,7 +557,7 @@ namespace calculate
                 TextAnnotation0.AxisX = chart1.ChartAreas[0].AxisX;
                 TextAnnotation0.AxisY = chart1.ChartAreas[0].AxisY;
                 TextAnnotation0.X = answer0;
-                TextAnnotation0.Y = Math.Round(yValues.Min()) - 10;
+                TextAnnotation0.Y = -5;
                 TextAnnotation0.ForeColor = Color.Red;
                 TextAnnotation0.Visible = true;
                 TextAnnotation0.Font = new Font("Century Gothic", 11, FontStyle.Regular);
@@ -567,7 +565,6 @@ namespace calculate
 
                 text = "Root: " + answer0Text;
 
-                yLim = Math.Round(yValues.Min()) - 50;
             }
             else
             {
@@ -617,7 +614,7 @@ namespace calculate
                 TextAnnotation1.AxisX = chart1.ChartAreas[0].AxisX;
                 TextAnnotation1.AxisY = chart1.ChartAreas[0].AxisY;
                 TextAnnotation1.X = answer1;
-                TextAnnotation1.Y = Math.Round(yValues.Min());
+                TextAnnotation1.Y = -5;
                 TextAnnotation1.ForeColor = Color.Red;
                 TextAnnotation1.Visible = true;
                 TextAnnotation1.Font = new Font("Century Gothic", 11, FontStyle.Regular);
@@ -630,7 +627,7 @@ namespace calculate
                 TextAnnotation2.AxisX = chart1.ChartAreas[0].AxisX;
                 TextAnnotation2.AxisY = chart1.ChartAreas[0].AxisY;
                 TextAnnotation2.X = answer2;
-                TextAnnotation2.Y = Math.Round(yValues.Min());
+                TextAnnotation2.Y = -5;
                 TextAnnotation2.ForeColor = Color.Red;
                 TextAnnotation2.Visible = true;
                 TextAnnotation2.Font = new Font("Century Gothic", 11, FontStyle.Regular);
@@ -638,7 +635,7 @@ namespace calculate
 
                 text = "Root 1: " + answer1Text + ", root 2: " + answer2Text;
 
-                yLim = Math.Round(yValues.Min()) - 50;
+                //yLim = Math.Round(yValues.Min()) - 50;
 
             }
 
@@ -651,8 +648,8 @@ namespace calculate
             seriesXAxis.Color = Color.Black;
             chart1.Series.Add(seriesXAxis);
 
-            seriesYAxis.Points.AddXY(0, Math.Round(yValues.Max())+50);
-            seriesYAxis.Points.AddXY(0, Math.Round(yValues.Min())-50);
+            seriesYAxis.Points.AddXY(0, Math.Round(yValues.Max())+100000);
+            seriesYAxis.Points.AddXY(0, Math.Round(yValues.Min())-100000);
             seriesYAxis.ChartType = SeriesChartType.Line;
             seriesYAxis.Color = Color.Black;
             chart1.Series.Add(seriesYAxis);
@@ -676,7 +673,7 @@ namespace calculate
             chart1.ChartAreas[0].AxisX.TitleFont = new Font("Century Gothic", 11, FontStyle.Regular);
             chart1.ChartAreas[0].AxisY.TitleFont = new Font("Century Gothic", 11, FontStyle.Regular);
 
-            chart1.ChartAreas[0].AxisY.Minimum = yLim;
+            chart1.ChartAreas[0].AxisY.Minimum = Math.Round(yValues.Min())-10;
             chart1.ChartAreas[0].AxisY.Maximum = Math.Round(yValues.Max())+50;
             chart1.ChartAreas[0].AxisX.Maximum = xLimMax;
             chart1.ChartAreas[0].AxisX.Minimum = xLimMin;
