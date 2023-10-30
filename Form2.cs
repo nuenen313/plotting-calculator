@@ -109,103 +109,33 @@ namespace calculate
 
             series.Points.DataBindXY(xPoints, yPoints);
             chart1.Series.Add(series);
-            series.ChartType = SeriesChartType.Line;
 
             var seriesPoint = new Series("Result");
             seriesPoint.Points.AddXY(number3_angles, result2);
-            seriesPoint.ChartType = SeriesChartType.Point;
             chart1.Series.Add(seriesPoint);
-            chart1.Series["Result"].MarkerSize = 5;
-            chart1.Series["Result"].MarkerStyle = MarkerStyle.Circle;
-            chart1.Series["Result"].CustomProperties = "IsXAxisQuantitative=True";
-            chart1.Series["Result"].MarkerColor = Color.Red;
 
             var seriesLineX = new Series("Horizontal Line");
             seriesLineX.Points.AddXY(number3_angles - 290, result2);
             seriesLineX.Points.AddXY(number3_angles, result2);
-            seriesLineX.ChartType = SeriesChartType.Line;
             chart1.Series.Add(seriesLineX);
-            chart1.Series["Horizontal Line"].BorderWidth = 2;
-            chart1.Series["Horizontal Line"].BorderDashStyle = ChartDashStyle.Dash;
-            chart1.Series["Horizontal Line"].Color = Color.Red;
 
             var seriesLineY = new Series("Vertical Line");
             seriesLineY.Points.AddXY(number3_angles, Yminimum);
             seriesLineY.Points.AddXY(number3_angles, result2);
-            seriesLineY.ChartType = SeriesChartType.Line;
             chart1.Series.Add(seriesLineY);
-            chart1.Series["Vertical Line"].BorderWidth = 2;
-            chart1.Series["Vertical Line"].BorderDashStyle = ChartDashStyle.Dash;
-            chart1.Series["Vertical Line"].Color = Color.Red;
-
-            chart1.Series["Points"].BorderWidth = 2;
-            chart1.Location = new System.Drawing.Point(0, 0);
-            chart1.Size = new System.Drawing.Size(600, 300);
-            chart1.ChartAreas[0].AxisX.LabelStyle.Format = "0.";
-            chart1.ChartAreas[0].AxisX.Title = "x (degrees)";
-            chart1.ChartAreas[0].AxisY.Title = title;
-
-            chart1.ChartAreas[0].AxisY.Maximum = Ymaximum;
-            chart1.ChartAreas[0].AxisY.Minimum = Yminimum;
-            chart1.ChartAreas[0].AxisX.Maximum = number3_angles + 290;
-            chart1.ChartAreas[0].AxisX.Minimum = number3_angles - 290;
-
-            Title title0 = new Title();
-            title0.Font = new Font("Century Gothic", 12, FontStyle.Regular);
-            title0.Text = PlotTitle;
-            chart1.Titles.Add(title0);
-            chart1.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Century Gothic", 10, FontStyle.Regular);
-            chart1.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Century Gothic", 10, FontStyle.Regular);
-            chart1.ChartAreas[0].AxisX.TitleFont = new Font("Century Gothic", 11, FontStyle.Regular);
-            chart1.ChartAreas[0].AxisY.TitleFont = new Font("Century Gothic", 11, FontStyle.Regular);
-
-            var MyDataPoint = new DataPoint(0, 0);
-
-            var TextAnnotationX = new TextAnnotation();
-            string number3Text = number3_angles.ToString("N2");
-            TextAnnotationX.Text = number3Text;
-            TextAnnotationX.AnchorDataPoint = MyDataPoint;
-            TextAnnotationX.AxisX = chart1.ChartAreas[0].AxisX;
-            TextAnnotationX.AxisY = chart1.ChartAreas[0].AxisY;
-            TextAnnotationX.X = number3_angles;
-            TextAnnotationX.Y = -1.2;
-            TextAnnotationX.ForeColor = Color.Red;
-            TextAnnotationX.Visible = true;
-            TextAnnotationX.Font = new Font("Century Gothic", 11, FontStyle.Regular);
-            chart1.Annotations.Add(TextAnnotationX);
-
-            var TextAnnotationY = new TextAnnotation();
-            string resultText = result2.ToString("N2");
-            TextAnnotationY.Text = resultText;
-            TextAnnotationY.AnchorDataPoint = MyDataPoint;
-            TextAnnotationY.AxisX = chart1.ChartAreas[0].AxisX;
-            TextAnnotationY.AxisY = chart1.ChartAreas[0].AxisY;
-            TextAnnotationY.X = number3_angles - 290;
-            TextAnnotationY.Y = result2;
-            TextAnnotationY.ForeColor = Color.Red;
-            TextAnnotationY.Visible = true;
-            TextAnnotationY.Font = new Font("Century Gothic", 11, FontStyle.Regular);
-            chart1.Annotations.Add(TextAnnotationY);
 
             var seriesXAxis = new Series("XAxis");
             var seriesYAxis = new Series("YAxis");
 
             seriesXAxis.Points.AddXY(xPoints.Min(), 0);
             seriesXAxis.Points.AddXY(xPoints.Max(), 0);
-            seriesXAxis.ChartType = SeriesChartType.Line;
-            seriesXAxis.Color = Color.Black;
             chart1.Series.Add(seriesXAxis);
 
             seriesYAxis.Points.AddXY(0, Math.Round(yPoints.Max()) + 50);
             seriesYAxis.Points.AddXY(0, Math.Round(yPoints.Min()) - 50);
-            seriesYAxis.ChartType = SeriesChartType.Line;
-            seriesYAxis.Color = Color.Black;
             chart1.Series.Add(seriesYAxis);
 
-            chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.LightGray;
-            chart1.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
-            chart1.ChartAreas[0].AxisX.LineColor = Color.LightGray;
-            chart1.ChartAreas[0].AxisY.LineColor = Color.LightGray;
+            chart_appearance_sin_cos(chart1, series, seriesPoint, seriesLineX, seriesLineY, title, number3_angles, PlotTitle, result2, seriesXAxis, seriesYAxis);
 
             this.Controls.Add(chart1);
         }
@@ -352,119 +282,41 @@ namespace calculate
             seriesBefore.Points.DataBindXY(xPoints2_angles, yPoints2);
             seriesAfter.Points.DataBindXY(xPoints3_angles, yPoints3);
             chart1.Series.Add(seriesBefore);
-            seriesBefore.ChartType = SeriesChartType.Line;
             chart1.Series.Add(seriesAfter);
-            seriesAfter.ChartType = SeriesChartType.Line;
 
 
             series.Points.DataBindXY(xPoints1_angles, yPoints1);
             chart1.Series.Add(series);
-            series.ChartType = SeriesChartType.Line;
 
             var seriesPoint = new Series("Result");
             seriesPoint.Points.AddXY(number3_angles, result2);
-            seriesPoint.ChartType = SeriesChartType.Point;
             chart1.Series.Add(seriesPoint);
-            chart1.Series["Result"].MarkerSize = 5;
-            chart1.Series["Result"].MarkerStyle = MarkerStyle.Circle;
-            chart1.Series["Result"].CustomProperties = "IsXAxisQuantitative=True";
-            chart1.Series["Result"].MarkerColor = Color.Red;
 
             var seriesLineX = new Series("Horizontal Line");
+
             seriesLineX.Points.AddXY(start_x * 180 / Math.PI - 180, result2);
             seriesLineX.Points.AddXY(number3_angles, result2);
-            seriesLineX.ChartType = SeriesChartType.Line;
             chart1.Series.Add(seriesLineX);
-            chart1.Series["Horizontal Line"].BorderWidth = 2;
-            chart1.Series["Horizontal Line"].BorderDashStyle = ChartDashStyle.Dash;
-            chart1.Series["Horizontal Line"].Color = Color.Red;
 
             var seriesLineY = new Series("Vertical Line");
+
             seriesLineY.Points.AddXY(number3_angles, -Math.Round(Math.Abs(result2)) - 10);
             seriesLineY.Points.AddXY(number3_angles, result2);
-            seriesLineY.ChartType = SeriesChartType.Line;
             chart1.Series.Add(seriesLineY);
-            chart1.Series["Vertical Line"].BorderWidth = 2;
-            chart1.Series["Vertical Line"].BorderDashStyle = ChartDashStyle.Dash;
-            chart1.Series["Vertical Line"].Color = Color.Red;
-
-            chart1.Series["Points"].BorderWidth = 2;
-            chart1.Series["Points"].Color = Color.RoyalBlue;
-            chart1.Series["Smaller"].Color = Color.RoyalBlue;
-            chart1.Series["Larger"].Color = Color.RoyalBlue;
-            chart1.Series["Smaller"].BorderWidth = 2;
-            chart1.Series["Larger"].BorderWidth = 2;
-
-            chart1.Location = new System.Drawing.Point(0, 0);
-            chart1.Size = new System.Drawing.Size(600, 500);
-            chart1.ChartAreas[0].AxisX.LabelStyle.Format = "0.";
-            chart1.ChartAreas[0].AxisX.Title = "x (degrees)";
-            chart1.ChartAreas[0].AxisX.TitleFont = new Font("Century Gothic", 11, FontStyle.Regular);
-            chart1.ChartAreas[0].AxisY.TitleFont = new Font("Century Gothic", 11, FontStyle.Regular);
-            Title title_x = new Title();
-            chart1.ChartAreas[0].AxisY.Title = title;
-
-
-            chart1.ChartAreas[0].AxisY.Maximum = Math.Round(Math.Abs(result2)) + 10;
-            chart1.ChartAreas[0].AxisY.Minimum = -Math.Round(Math.Abs(result2)) - 5;
-            chart1.ChartAreas[0].AxisX.Maximum = end_x * 180 / Math.PI + 180;
-            chart1.ChartAreas[0].AxisX.Minimum = start_x * 180 / Math.PI - 180;
-            Title title1 = new Title();
-            title1.Font = new Font("Century Gothic", 12, FontStyle.Regular);
-            title1.Text = PlotTitle;
-            chart1.Titles.Add(title1);
-            chart1.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Century Gothic", 10, FontStyle.Regular);
-            chart1.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Century Gothic", 10, FontStyle.Regular);
-
-            this.Controls.Add(chart1);
-
-            var MyDataPoint = new DataPoint(0, 0);
-
-            var TextAnnotationX = new TextAnnotation();
-            string number3Text = number3_angles.ToString("N2");
-            TextAnnotationX.Text = number3Text;
-            TextAnnotationX.AnchorDataPoint = MyDataPoint;
-            TextAnnotationX.AxisX = chart1.ChartAreas[0].AxisX;
-            TextAnnotationX.AxisY = chart1.ChartAreas[0].AxisY;
-            TextAnnotationX.X = number3_angles;
-            TextAnnotationX.Y = -Math.Round(Math.Abs(result2)) - 3;
-            TextAnnotationX.ForeColor = Color.Red;
-            TextAnnotationX.Visible = true;
-            TextAnnotationX.Font = new Font("Century Gothic", 11, FontStyle.Regular);
-            chart1.Annotations.Add(TextAnnotationX);
-
-            var TextAnnotationY = new TextAnnotation();
-            string resultText = result2.ToString("N2");
-            TextAnnotationY.Text = resultText;
-            TextAnnotationY.AnchorDataPoint = MyDataPoint;
-            TextAnnotationY.AxisX = chart1.ChartAreas[0].AxisX;
-            TextAnnotationY.AxisY = chart1.ChartAreas[0].AxisY;
-            TextAnnotationY.X = start_x * 180 / Math.PI - 180;
-            TextAnnotationY.Y = result2;
-            TextAnnotationY.ForeColor = Color.Red;
-            TextAnnotationY.Visible = true;
-            TextAnnotationY.Font = new Font("Century Gothic", 11, FontStyle.Regular);
-            chart1.Annotations.Add(TextAnnotationY);
 
             var seriesXAxis = new Series("XAxis");
             var seriesYAxis = new Series("YAxis");
 
             seriesXAxis.Points.AddXY(start_x * 180 / Math.PI - 350, 0);
             seriesXAxis.Points.AddXY(end_x * 180 / Math.PI + 350, 0);
-            seriesXAxis.ChartType = SeriesChartType.Line;
-            seriesXAxis.Color = Color.Black;
             chart1.Series.Add(seriesXAxis);
 
             seriesYAxis.Points.AddXY(0, Math.Round(Math.Abs(result2)) + 50);
             seriesYAxis.Points.AddXY(0, -Math.Round(Math.Abs(result2)) - 50);
-            seriesYAxis.ChartType = SeriesChartType.Line;
-            seriesYAxis.Color = Color.Black;
             chart1.Series.Add(seriesYAxis);
 
-            chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.LightGray;
-            chart1.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
-            chart1.ChartAreas[0].AxisX.LineColor = Color.LightGray;
-            chart1.ChartAreas[0].AxisY.LineColor = Color.LightGray;
+            chart_appearance_tan_cot(chart1, series, seriesBefore, seriesAfter, seriesPoint, seriesLineX, seriesLineY, title, start_x, end_x, result2, PlotTitle, number3_angles,
+                seriesXAxis, seriesYAxis);
 
             this.Controls.Add(chart1);
 
@@ -477,32 +329,31 @@ namespace calculate
             string a_string = a.ToString("N2");
             string b_string = b.ToString("N2");
             string c_string = c.ToString("N2");
-            string PlotTitle = "";
+            string PlotTitle;
+
             if (c >= 0 && b >= 0)
             {
-                PlotTitle = "y = " + a_string + "x^2 + " + b_string + "x + " + c_string;
+                PlotTitle = "y = " + a_string + "x² + " + b_string + "x + " + c_string;
             }
             else if (c >= 0 && b < 0)
             {
-                PlotTitle = "y = " + a_string + "x^2 " + b_string + "x + " + c_string;
+                PlotTitle = "y = " + a_string + "x² " + b_string + "x + " + c_string;
             }
             else if (c < 0 && b >= 0)
             {
-                PlotTitle = "y = " + a_string + "x^2 + " + b_string + "x " + c_string;
+                PlotTitle = "y = " + a_string + "x² + " + b_string + "x " + c_string;
             }
             else if (c < 0 && b < 0)
             {
-                PlotTitle = "y = " + a_string + "x^2 " + b_string + "x " + c_string;
+                PlotTitle = "y = " + a_string + "x² " + b_string + "x " + c_string;
             }
             else
             {
-                PlotTitle = "y = " + a_string + "x^2 + " + b_string + "x + " + c_string;
+                PlotTitle = "y = " + a_string + "x² + " + b_string + "x + " + c_string;
             }
+
             chart1.Series.Clear();
             chart1.ChartAreas.Add(new ChartArea());
-            chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.LightGray;
-            chart1.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
-
 
             double delta = (b * b) - 4 * a * c;
             double xLimMax;
@@ -542,26 +393,9 @@ namespace calculate
                 xLimMax = Math.Round(xValues.Max() + 10);
                 xLimMin = Math.Round(xValues.Min() - 10);
 
-                seriesAnswer0.Points.AddXY(answer0, 0);
-                seriesAnswer0.ChartType = SeriesChartType.Point;
-                chart1.Series.Add(seriesAnswer0);
-                chart1.Series["Answer0"].MarkerSize = 5;
-                chart1.Series["Answer0"].MarkerStyle = MarkerStyle.Circle;
-                chart1.Series["Answer0"].CustomProperties = "IsXAxisQuantitative=True";
-                chart1.Series["Answer0"].MarkerColor = Color.Red;
-
-                var TextAnnotation0 = new TextAnnotation();
                 string answer0Text = answer0.ToString("N2");
-                TextAnnotation0.Text = answer0Text;
-                TextAnnotation0.AnchorDataPoint = MyDataPoint;
-                TextAnnotation0.AxisX = chart1.ChartAreas[0].AxisX;
-                TextAnnotation0.AxisY = chart1.ChartAreas[0].AxisY;
-                TextAnnotation0.X = answer0;
-                TextAnnotation0.Y = -5;
-                TextAnnotation0.ForeColor = Color.Red;
-                TextAnnotation0.Visible = true;
-                TextAnnotation0.Font = new Font("Century Gothic", 11, FontStyle.Regular);
-                chart1.Annotations.Add(TextAnnotation0);
+
+                quadratic_annotation_zero(chart1, seriesAnswer0, answer0, MyDataPoint);
 
                 text = "Root: " + answer0Text;
 
@@ -591,51 +425,13 @@ namespace calculate
                 xLimMax = Math.Round(bigger) + 10;
                 xLimMin = Math.Round(smaller) - 10;
 
-                seriesAnswer1.Points.AddXY(answer1, 0);
-                seriesAnswer1.ChartType = SeriesChartType.Point;
-                chart1.Series.Add(seriesAnswer1);
-                chart1.Series["Answer1"].MarkerSize = 5;
-                chart1.Series["Answer1"].MarkerStyle = MarkerStyle.Circle;
-                chart1.Series["Answer1"].CustomProperties = "IsXAxisQuantitative=True";
-                chart1.Series["Answer1"].MarkerColor = Color.Red;
+                string answer1Text = bigger.ToString("N2");
 
-                seriesAnswer2.Points.AddXY(answer2, 0);
-                seriesAnswer2.ChartType = SeriesChartType.Point;
-                chart1.Series.Add(seriesAnswer2);
-                chart1.Series["Answer2"].MarkerSize = 5;
-                chart1.Series["Answer2"].MarkerStyle = MarkerStyle.Circle;
-                chart1.Series["Answer2"].CustomProperties = "IsXAxisQuantitative=True";
-                chart1.Series["Answer2"].MarkerColor = Color.Red;
+                string answer2Text = smaller.ToString("N2");
 
-                var TextAnnotation1 = new TextAnnotation();
-                string answer1Text = answer1.ToString("N2");
-                TextAnnotation1.Text = answer1Text;
-                TextAnnotation1.AnchorDataPoint = MyDataPoint;
-                TextAnnotation1.AxisX = chart1.ChartAreas[0].AxisX;
-                TextAnnotation1.AxisY = chart1.ChartAreas[0].AxisY;
-                TextAnnotation1.X = answer1;
-                TextAnnotation1.Y = -5;
-                TextAnnotation1.ForeColor = Color.Red;
-                TextAnnotation1.Visible = true;
-                TextAnnotation1.Font = new Font("Century Gothic", 11, FontStyle.Regular);
-                chart1.Annotations.Add(TextAnnotation1);
+                quadratic_annotation_positive(chart1, answer1, answer2, bigger, smaller, seriesAnswer1, seriesAnswer2, MyDataPoint);
 
-                var TextAnnotation2 = new TextAnnotation();
-                string answer2Text = answer2.ToString("N2");
-                TextAnnotation2.Text = answer2Text;
-                TextAnnotation2.AnchorDataPoint = MyDataPoint;
-                TextAnnotation2.AxisX = chart1.ChartAreas[0].AxisX;
-                TextAnnotation2.AxisY = chart1.ChartAreas[0].AxisY;
-                TextAnnotation2.X = answer2;
-                TextAnnotation2.Y = -5;
-                TextAnnotation2.ForeColor = Color.Red;
-                TextAnnotation2.Visible = true;
-                TextAnnotation2.Font = new Font("Century Gothic", 11, FontStyle.Regular);
-                chart1.Annotations.Add(TextAnnotation2);
-
-                text = "Root 1: " + answer1Text + ", root 2: " + answer2Text;
-
-                //yLim = Math.Round(yValues.Min()) - 50;
+                text = "Root 1: " + answer1Text + "  Root 2: " + answer2Text;
 
             }
 
@@ -644,18 +440,211 @@ namespace calculate
 
             seriesXAxis.Points.AddXY(xValues.Min(), 0);
             seriesXAxis.Points.AddXY(xValues.Max(), 0);
-            seriesXAxis.ChartType = SeriesChartType.Line;
-            seriesXAxis.Color = Color.Black;
             chart1.Series.Add(seriesXAxis);
 
             seriesYAxis.Points.AddXY(0, Math.Round(yValues.Max())+100000);
             seriesYAxis.Points.AddXY(0, Math.Round(yValues.Min())-100000);
-            seriesYAxis.ChartType = SeriesChartType.Line;
-            seriesYAxis.Color = Color.Black;
             chart1.Series.Add(seriesYAxis);
 
             seriesQuadratic.Points.DataBindXY(xValues, yValues);
             chart1.Series.Add(seriesQuadratic);
+
+            chart_appearance_quadratic(chart1, seriesXAxis, seriesYAxis, seriesQuadratic, PlotTitle, xLimMax, xLimMin, yValues, xValues);
+
+            this.Controls.Add(chart1);
+
+            return text;
+        }
+
+        private void chart_appearance_sin_cos(Chart chart1, Series series, Series seriesPoint, Series seriesLineX, Series seriesLineY, 
+            string title, double number3_angles, string PlotTitle, double result2, Series seriesXAxis, Series seriesYAxis)
+        {
+            series.ChartType = SeriesChartType.Line;
+
+            seriesPoint.ChartType = SeriesChartType.Point;
+
+            chart1.Series["Result"].MarkerSize = 5;
+            chart1.Series["Result"].MarkerStyle = MarkerStyle.Circle;
+            chart1.Series["Result"].CustomProperties = "IsXAxisQuantitative=True";
+            chart1.Series["Result"].MarkerColor = Color.Red;
+
+            seriesLineX.ChartType = SeriesChartType.Line;
+
+            chart1.Series["Horizontal Line"].BorderWidth = 2;
+            chart1.Series["Horizontal Line"].BorderDashStyle = ChartDashStyle.Dash;
+            chart1.Series["Horizontal Line"].Color = Color.Red;
+
+            seriesLineY.ChartType = SeriesChartType.Line;
+            chart1.Series["Vertical Line"].BorderWidth = 2;
+            chart1.Series["Vertical Line"].BorderDashStyle = ChartDashStyle.Dash;
+            chart1.Series["Vertical Line"].Color = Color.Red;
+
+            chart1.Series["Points"].BorderWidth = 2;
+            chart1.Location = new System.Drawing.Point(0, 0);
+            chart1.Size = new System.Drawing.Size(600, 300);
+            chart1.ChartAreas[0].AxisX.LabelStyle.Format = "0.";
+            chart1.ChartAreas[0].AxisX.Title = "x (degrees)";
+            chart1.ChartAreas[0].AxisY.Title = title;
+
+            chart1.ChartAreas[0].AxisY.Maximum = Ymaximum;
+            chart1.ChartAreas[0].AxisY.Minimum = Yminimum;
+            chart1.ChartAreas[0].AxisX.Maximum = number3_angles + 290;
+            chart1.ChartAreas[0].AxisX.Minimum = number3_angles - 290;
+
+            Title title0 = new Title();
+            title0.Font = new Font("Century Gothic", 12, FontStyle.Regular);
+            title0.Text = PlotTitle;
+            chart1.Titles.Add(title0);
+            chart1.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Century Gothic", 10, FontStyle.Regular);
+            chart1.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Century Gothic", 10, FontStyle.Regular);
+            chart1.ChartAreas[0].AxisX.TitleFont = new Font("Century Gothic", 11, FontStyle.Regular);
+            chart1.ChartAreas[0].AxisY.TitleFont = new Font("Century Gothic", 11, FontStyle.Regular);
+
+            var MyDataPoint = new DataPoint(0, 0);
+
+            var TextAnnotationX = new TextAnnotation();
+            string number3Text = number3_angles.ToString("N2");
+            TextAnnotationX.Text = number3Text;
+            TextAnnotationX.AnchorDataPoint = MyDataPoint;
+            TextAnnotationX.AxisX = chart1.ChartAreas[0].AxisX;
+            TextAnnotationX.AxisY = chart1.ChartAreas[0].AxisY;
+            TextAnnotationX.X = number3_angles;
+            TextAnnotationX.Y = -1.2;
+            TextAnnotationX.ForeColor = Color.Red;
+            TextAnnotationX.Visible = true;
+            TextAnnotationX.Font = new Font("Century Gothic", 11, FontStyle.Regular);
+            chart1.Annotations.Add(TextAnnotationX);
+
+            var TextAnnotationY = new TextAnnotation();
+            string resultText = result2.ToString("N2");
+            TextAnnotationY.Text = resultText;
+            TextAnnotationY.AnchorDataPoint = MyDataPoint;
+            TextAnnotationY.AxisX = chart1.ChartAreas[0].AxisX;
+            TextAnnotationY.AxisY = chart1.ChartAreas[0].AxisY;
+            TextAnnotationY.X = number3_angles - 290;
+            TextAnnotationY.Y = result2;
+            TextAnnotationY.ForeColor = Color.Red;
+            TextAnnotationY.Visible = true;
+            TextAnnotationY.Font = new Font("Century Gothic", 11, FontStyle.Regular);
+            chart1.Annotations.Add(TextAnnotationY);
+
+            seriesXAxis.ChartType = SeriesChartType.Line;
+            seriesXAxis.Color = Color.Black;
+
+            seriesYAxis.ChartType = SeriesChartType.Line;
+            seriesYAxis.Color = Color.Black;
+
+            chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.LightGray;
+            chart1.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
+            chart1.ChartAreas[0].AxisX.LineColor = Color.LightGray;
+            chart1.ChartAreas[0].AxisY.LineColor = Color.LightGray;
+
+        }
+
+        private void chart_appearance_tan_cot(Chart chart1, Series series, Series seriesBefore, Series seriesAfter, Series seriesPoint, Series seriesLineX,
+            Series seriesLineY, string title, double start_x, double end_x, double result2, string PlotTitle, double number3_angles, Series seriesXAxis, Series seriesYAxis)
+        {
+            seriesBefore.ChartType = SeriesChartType.Line;
+
+            seriesAfter.ChartType = SeriesChartType.Line;
+
+            series.ChartType = SeriesChartType.Line;
+
+            seriesPoint.ChartType = SeriesChartType.Point;
+            chart1.Series["Result"].MarkerSize = 5;
+            chart1.Series["Result"].MarkerStyle = MarkerStyle.Circle;
+            chart1.Series["Result"].CustomProperties = "IsXAxisQuantitative=True";
+            chart1.Series["Result"].MarkerColor = Color.Red;
+
+            seriesLineX.ChartType = SeriesChartType.Line;
+            chart1.Series["Horizontal Line"].BorderWidth = 2;
+            chart1.Series["Horizontal Line"].BorderDashStyle = ChartDashStyle.Dash;
+            chart1.Series["Horizontal Line"].Color = Color.Red;
+
+            seriesLineY.ChartType = SeriesChartType.Line;
+            chart1.Series["Vertical Line"].BorderWidth = 2;
+            chart1.Series["Vertical Line"].BorderDashStyle = ChartDashStyle.Dash;
+            chart1.Series["Vertical Line"].Color = Color.Red;
+
+            chart1.Series["Points"].BorderWidth = 2;
+            chart1.Series["Points"].Color = Color.RoyalBlue;
+            chart1.Series["Smaller"].Color = Color.RoyalBlue;
+            chart1.Series["Larger"].Color = Color.RoyalBlue;
+            chart1.Series["Smaller"].BorderWidth = 2;
+            chart1.Series["Larger"].BorderWidth = 2;
+
+            chart1.Location = new System.Drawing.Point(0, 0);
+            chart1.Size = new System.Drawing.Size(600, 500);
+            chart1.ChartAreas[0].AxisX.LabelStyle.Format = "0.";
+            chart1.ChartAreas[0].AxisX.Title = "x (degrees)";
+            chart1.ChartAreas[0].AxisX.TitleFont = new Font("Century Gothic", 11, FontStyle.Regular);
+            chart1.ChartAreas[0].AxisY.TitleFont = new Font("Century Gothic", 11, FontStyle.Regular);
+            chart1.ChartAreas[0].AxisY.Title = title;
+
+            chart1.ChartAreas[0].AxisY.Maximum = Math.Round(Math.Abs(result2)) + 10;
+            chart1.ChartAreas[0].AxisY.Minimum = -Math.Round(Math.Abs(result2)) - 5;
+            chart1.ChartAreas[0].AxisX.Maximum = end_x * 180 / Math.PI + 180;
+            chart1.ChartAreas[0].AxisX.Minimum = start_x * 180 / Math.PI - 180;
+            Title title1 = new Title();
+            title1.Font = new Font("Century Gothic", 12, FontStyle.Regular);
+            title1.Text = PlotTitle;
+            chart1.Titles.Add(title1);
+            chart1.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Century Gothic", 10, FontStyle.Regular);
+            chart1.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Century Gothic", 10, FontStyle.Regular);
+
+            var MyDataPoint = new DataPoint(0, 0);
+
+            var TextAnnotationX = new TextAnnotation();
+            string number3Text = number3_angles.ToString("N2");
+            TextAnnotationX.Text = number3Text;
+            TextAnnotationX.AnchorDataPoint = MyDataPoint;
+            TextAnnotationX.AxisX = chart1.ChartAreas[0].AxisX;
+            TextAnnotationX.AxisY = chart1.ChartAreas[0].AxisY;
+            TextAnnotationX.X = number3_angles;
+            TextAnnotationX.Y = -Math.Round(Math.Abs(result2)) - 3;
+            TextAnnotationX.ForeColor = Color.Red;
+            TextAnnotationX.Visible = true;
+            TextAnnotationX.Font = new Font("Century Gothic", 11, FontStyle.Regular);
+            chart1.Annotations.Add(TextAnnotationX);
+
+            var TextAnnotationY = new TextAnnotation();
+            string resultText = result2.ToString("N2");
+            TextAnnotationY.Text = resultText;
+            TextAnnotationY.AnchorDataPoint = MyDataPoint;
+            TextAnnotationY.AxisX = chart1.ChartAreas[0].AxisX;
+            TextAnnotationY.AxisY = chart1.ChartAreas[0].AxisY;
+            TextAnnotationY.X = start_x * 180 / Math.PI - 180;
+            TextAnnotationY.Y = result2;
+            TextAnnotationY.ForeColor = Color.Red;
+            TextAnnotationY.Visible = true;
+            TextAnnotationY.Font = new Font("Century Gothic", 11, FontStyle.Regular);
+            chart1.Annotations.Add(TextAnnotationY);
+
+            seriesXAxis.ChartType = SeriesChartType.Line;
+            seriesXAxis.Color = Color.Black;
+
+            seriesYAxis.ChartType = SeriesChartType.Line;
+            seriesYAxis.Color = Color.Black;
+
+            chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.LightGray;
+            chart1.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
+            chart1.ChartAreas[0].AxisX.LineColor = Color.LightGray;
+            chart1.ChartAreas[0].AxisY.LineColor = Color.LightGray;
+
+        }
+
+        private void chart_appearance_quadratic(Chart chart1, Series seriesXAxis, Series seriesYAxis, Series seriesQuadratic, string PlotTitle, double xLimMax, double xLimMin,
+            List<double> yValues, List<double> xValues)
+        {
+            chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.LightGray;
+            chart1.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
+
+            seriesXAxis.ChartType = SeriesChartType.Line;
+            seriesXAxis.Color = Color.Black;
+
+            seriesYAxis.ChartType = SeriesChartType.Line;
+            seriesYAxis.Color = Color.Black;
+
             chart1.Series["Quadratic"].Color = Color.RoyalBlue;
             seriesQuadratic.ChartType = SeriesChartType.Line;
 
@@ -673,16 +662,82 @@ namespace calculate
             chart1.ChartAreas[0].AxisX.TitleFont = new Font("Century Gothic", 11, FontStyle.Regular);
             chart1.ChartAreas[0].AxisY.TitleFont = new Font("Century Gothic", 11, FontStyle.Regular);
 
-            chart1.ChartAreas[0].AxisY.Minimum = Math.Round(yValues.Min())-10;
-            chart1.ChartAreas[0].AxisY.Maximum = Math.Round(yValues.Max())+50;
+            chart1.ChartAreas[0].AxisY.Minimum = Math.Round(yValues.Min()) - 10;
+            chart1.ChartAreas[0].AxisY.Maximum = Math.Round(yValues.Max()) + 50;
             chart1.ChartAreas[0].AxisX.Maximum = xLimMax;
             chart1.ChartAreas[0].AxisX.Minimum = xLimMin;
             chart1.ChartAreas[0].AxisX.LineColor = Color.LightGray;
             chart1.ChartAreas[0].AxisY.LineColor = Color.LightGray;
+        }
 
-            this.Controls.Add(chart1);
+        private void quadratic_annotation_zero(Chart chart1, Series seriesAnswer0, double answer0, DataPoint MyDataPoint)
+        {
+            seriesAnswer0.Points.AddXY(answer0, 0);
+            seriesAnswer0.ChartType = SeriesChartType.Point;
+            chart1.Series.Add(seriesAnswer0);
+            chart1.Series["Answer0"].MarkerSize = 5;
+            chart1.Series["Answer0"].MarkerStyle = MarkerStyle.Circle;
+            chart1.Series["Answer0"].CustomProperties = "IsXAxisQuantitative=True";
+            chart1.Series["Answer0"].MarkerColor = Color.Red;
 
-            return text;
+            var TextAnnotation0 = new TextAnnotation();
+            string answer0Text = answer0.ToString("N2");
+            TextAnnotation0.Text = answer0Text;
+            TextAnnotation0.AnchorDataPoint = MyDataPoint;
+            TextAnnotation0.AxisX = chart1.ChartAreas[0].AxisX;
+            TextAnnotation0.AxisY = chart1.ChartAreas[0].AxisY;
+            TextAnnotation0.X = answer0;
+            TextAnnotation0.Y = -5;
+            TextAnnotation0.ForeColor = Color.Red;
+            TextAnnotation0.Visible = true;
+            TextAnnotation0.Font = new Font("Century Gothic", 11, FontStyle.Regular);
+            chart1.Annotations.Add(TextAnnotation0);
+        }
+
+        private void quadratic_annotation_positive(Chart chart1, double answer1, double answer2, double bigger, double smaller, Series seriesAnswer1, Series seriesAnswer2,
+            DataPoint MyDataPoint)
+        {
+            seriesAnswer1.Points.AddXY(answer1, 0);
+            seriesAnswer1.ChartType = SeriesChartType.Point;
+            chart1.Series.Add(seriesAnswer1);
+            chart1.Series["Answer1"].MarkerSize = 5;
+            chart1.Series["Answer1"].MarkerStyle = MarkerStyle.Circle;
+            chart1.Series["Answer1"].CustomProperties = "IsXAxisQuantitative=True";
+            chart1.Series["Answer1"].MarkerColor = Color.Red;
+
+            seriesAnswer2.Points.AddXY(answer2, 0);
+            seriesAnswer2.ChartType = SeriesChartType.Point;
+            chart1.Series.Add(seriesAnswer2);
+            chart1.Series["Answer2"].MarkerSize = 5;
+            chart1.Series["Answer2"].MarkerStyle = MarkerStyle.Circle;
+            chart1.Series["Answer2"].CustomProperties = "IsXAxisQuantitative=True";
+            chart1.Series["Answer2"].MarkerColor = Color.Red;
+
+            var TextAnnotation1 = new TextAnnotation();
+            string answer1Text = bigger.ToString("N2");
+            TextAnnotation1.Text = answer1Text;
+            TextAnnotation1.AnchorDataPoint = MyDataPoint;
+            TextAnnotation1.AxisX = chart1.ChartAreas[0].AxisX;
+            TextAnnotation1.AxisY = chart1.ChartAreas[0].AxisY;
+            TextAnnotation1.X = bigger + 1;
+            TextAnnotation1.Y = -5;
+            TextAnnotation1.ForeColor = Color.Red;
+            TextAnnotation1.Visible = true;
+            TextAnnotation1.Font = new Font("Century Gothic", 11, FontStyle.Regular);
+            chart1.Annotations.Add(TextAnnotation1);
+
+            var TextAnnotation2 = new TextAnnotation();
+            string answer2Text = smaller.ToString("N2");
+            TextAnnotation2.Text = answer2Text;
+            TextAnnotation2.AnchorDataPoint = MyDataPoint;
+            TextAnnotation2.AxisX = chart1.ChartAreas[0].AxisX;
+            TextAnnotation2.AxisY = chart1.ChartAreas[0].AxisY;
+            TextAnnotation2.X = smaller - 1;
+            TextAnnotation2.Y = -5;
+            TextAnnotation2.ForeColor = Color.Red;
+            TextAnnotation2.Visible = true;
+            TextAnnotation2.Font = new Font("Century Gothic", 11, FontStyle.Regular);
+            chart1.Annotations.Add(TextAnnotation2);
         }
     }
 }

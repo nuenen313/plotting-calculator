@@ -370,6 +370,7 @@ namespace calculate
             {
                 if (textEditor.Text.Length > 0)
                 {
+                    operation = "sin";
                     string text = textEditor.Text;
                     char lastElement = text[text.Length - 1];
                     if (text.Contains('+') || text.Contains('-') || text.Contains('×') || text.Contains('÷'))
@@ -403,6 +404,7 @@ namespace calculate
             {
                 if (textEditor.Text.Length > 0)
                 {
+                    operation = "cos";
                     string text = textEditor.Text;
                     char lastElement = text[text.Length - 1];
                     if (text.Contains('+') || text.Contains('-') || text.Contains('×') || text.Contains('÷'))
