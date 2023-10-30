@@ -28,7 +28,7 @@ namespace calculate
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (!(e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9))
+            if (!(e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9 || e.KeyCode == Keys.Back))
             {
                 e.SuppressKeyPress = true;
             }
@@ -370,74 +370,11 @@ namespace calculate
             {
                 if (textEditor.Text.Length > 0)
                 {
-                    operation = "sin";
                     string text = textEditor.Text;
                     char lastElement = text[text.Length - 1];
                     if (text.Contains('+') || text.Contains('-') || text.Contains('×') || text.Contains('÷'))
                     {
-                        if (lastElement == '+' || lastElement == '-' || lastElement == '×' || lastElement == '÷')
-                        {
-                            text = text.Remove(text.Length - 1);
-                            textEditor.Text = text;
-                        }
-                        if (text.Contains('+'))
-                        {
-                            operation = "+";
-                            char op = Convert.ToChar(operation);
-                            string last_number = text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                            compute(operation);
-                            number3 = double.Parse(textEditor.Text);
-                            operation = "sin";
-                            string last_number2 = textEditor.Text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                        }
-                        if (text.Contains('-'))
-                        {
-                            operation = "-";
-                            char op = Convert.ToChar(operation);
-                            string last_number = text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                            compute(operation);
-                            number3 = double.Parse(textEditor.Text);
-                            operation = "sin";
-                            string last_number2 = textEditor.Text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                        }
-                        if (text.Contains('×'))
-                        {
-                            operation = "×";
-                            char op = Convert.ToChar(operation);
-                            string last_number = text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                            compute(operation);
-                            number3 = double.Parse(textEditor.Text);
-                            operation = "sin";
-                            string last_number2 = textEditor.Text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                        }
-                        if (text.Contains('÷'))
-                        {
-                            operation = "÷";
-                            char op = Convert.ToChar(operation);
-                            string last_number = text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                            if (number2 - 0 < float.Epsilon)
-                            {
-                                textEditor.Text = "0";
-                                number3 = 0;
-                                number2 = 0;
-                                operation = "sin";
-                            }
-                            else
-                            {
-                                compute(operation);
-                                number3 = double.Parse(textEditor.Text);
-                                operation = "sin";
-                                string last_number2 = textEditor.Text.Split(op).Last();
-                                number2 = (float)Convert.ToDouble(last_number);
-                            }
-                        }
+                        trigonometric_function("sin", lastElement, text);
                     }
                     if (textEditor.Text.Length == 0)
                     {
@@ -466,74 +403,11 @@ namespace calculate
             {
                 if (textEditor.Text.Length > 0)
                 {
-                    operation = "cos";
                     string text = textEditor.Text;
                     char lastElement = text[text.Length - 1];
                     if (text.Contains('+') || text.Contains('-') || text.Contains('×') || text.Contains('÷'))
                     {
-                        if (lastElement == '+' || lastElement == '-' || lastElement == '×' || lastElement == '÷')
-                        {
-                            text = text.Remove(text.Length - 1);
-                            textEditor.Text = text;
-                        }
-                        if (text.Contains('+'))
-                        {
-                            operation = "+";
-                            char op = Convert.ToChar(operation);
-                            string last_number = text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                            compute(operation);
-                            number3 = double.Parse(textEditor.Text);
-                            operation = "cos";
-                            string last_number2 = textEditor.Text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                        }
-                        if (text.Contains('-'))
-                        {
-                            operation = "-";
-                            char op = Convert.ToChar(operation);
-                            string last_number = text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                            compute(operation);
-                            number3 = double.Parse(textEditor.Text);
-                            operation = "cos";
-                            string last_number2 = textEditor.Text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                        }
-                        if (text.Contains('×'))
-                        {
-                            operation = "×";
-                            char op = Convert.ToChar(operation);
-                            string last_number = text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                            compute(operation);
-                            number3 = double.Parse(textEditor.Text);
-                            operation = "cos";
-                            string last_number2 = textEditor.Text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                        }
-                        if (text.Contains('÷'))
-                        {
-                            operation = "÷";
-                            char op = Convert.ToChar(operation);
-                            string last_number = text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                            if (number2 - 0 < float.Epsilon)
-                            {
-                                textEditor.Text = "0";
-                                number3 = 0;
-                                number2 = 0;
-                                operation = "cos";
-                            }
-                            else
-                            {
-                                compute(operation);
-                                number3 = double.Parse(textEditor.Text);
-                                operation = "cos";
-                                string last_number2 = textEditor.Text.Split(op).Last();
-                                number2 = (float)Convert.ToDouble(last_number);
-                            }
-                        }
+                        trigonometric_function("cos", lastElement, text);
                     }
                     if (textEditor.Text.Length == 0)
                     {
@@ -568,69 +442,7 @@ namespace calculate
                     char lastElement = text[text.Length - 1];
                     if (text.Contains('+') || text.Contains('-') || text.Contains('×') || text.Contains('÷'))
                     {
-                        if (lastElement == '+' || lastElement == '-' || lastElement == '×' || lastElement == '÷')
-                        {
-                            text = text.Remove(text.Length - 1);
-                            textEditor.Text = text;
-                        }
-                        if (text.Contains('+'))
-                        {
-                            operation = "+";
-                            char op = Convert.ToChar(operation);
-                            string last_number = text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                            compute(operation);
-                            number3 = double.Parse(textEditor.Text);
-                            operation = "tg";
-                            string last_number2 = textEditor.Text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                        }
-                        if (text.Contains('-'))
-                        {
-                            operation = "-";
-                            char op = Convert.ToChar(operation);
-                            string last_number = text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                            compute(operation);
-                            number3 = double.Parse(textEditor.Text);
-                            operation = "tg";
-                            string last_number2 = textEditor.Text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                        }
-                        if (text.Contains('×'))
-                        {
-                            operation = "×";
-                            char op = Convert.ToChar(operation);
-                            string last_number = text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                            compute(operation);
-                            number3 = double.Parse(textEditor.Text);
-                            operation = "tg";
-                            string last_number2 = textEditor.Text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                        }
-                        if (text.Contains('÷'))
-                        {
-                            operation = "÷";
-                            char op = Convert.ToChar(operation);
-                            string last_number = text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                            if (number2 - 0 < float.Epsilon)
-                            {
-                                textEditor.Text = "0";
-                                number3 = 0;
-                                number2 = 0;
-                                operation = "tg";
-                            }
-                            else
-                            {
-                                compute(operation);
-                                number3 = double.Parse(textEditor.Text);
-                                operation = "tg";
-                                string last_number2 = textEditor.Text.Split(op).Last();
-                                number2 = (float)Convert.ToDouble(last_number);
-                            }
-                        }
+                        trigonometric_function("tg", lastElement, text);
                     }
                     if (textEditor.Text.Length == 0)
                     {
@@ -664,70 +476,7 @@ namespace calculate
                     char lastElement = text[text.Length - 1];
                     if (text.Contains('+') || text.Contains('-') || text.Contains('×') || text.Contains('÷'))
                     {
-                        if (lastElement == '+' || lastElement == '-' || lastElement == '×' || lastElement == '÷')
-                        {
-                            text = text.Remove(text.Length - 1);
-                            textEditor.Text = text;
-                        }
-                        if (text.Contains('+'))
-                        {
-                            operation = "+";
-                            char op = Convert.ToChar(operation);
-                            string last_number = text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                            compute(operation);
-                            number3 = double.Parse(textEditor.Text);
-                            operation = "ctg";
-                            string last_number2 = textEditor.Text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                        }
-                        if (text.Contains('-'))
-                        {
-                            operation = "-";
-                            char op = Convert.ToChar(operation);
-                            string last_number = text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                            compute(operation);
-                            number3 = double.Parse(textEditor.Text);
-                            operation = "ctg";
-                            string last_number2 = textEditor.Text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                        }
-                        if (text.Contains('×'))
-                        {
-                            operation = "×";
-                            char op = Convert.ToChar(operation);
-                            string last_number = text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                            compute(operation);
-                            number3 = double.Parse(textEditor.Text);
-                            operation = "ctg";
-                            string last_number2 = textEditor.Text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                        }
-                        if (text.Contains('÷'))
-                        {
-                            operation = "÷";
-                            char op = Convert.ToChar(operation);
-                            string last_number = text.Split(op).Last();
-                            number2 = (float)Convert.ToDouble(last_number);
-                            if (number2 - 0 < float.Epsilon)
-                            {
-                                textEditor.Text = "0";
-                                number2 = 0;
-                                number3 = 0;
-                                operation = "ctg";
-
-                            }
-                            else
-                            {
-                                compute(operation);
-                                number3 = double.Parse(textEditor.Text);
-                                operation = "ctg";
-                                string last_number2 = textEditor.Text.Split(op).Last();
-                                number2 = (float)Convert.ToDouble(last_number);
-                            }
-                        }
+                        trigonometric_function("ctg", lastElement, text);
                     }
                     if (textEditor.Text.Length == 0)
                     {
@@ -810,6 +559,12 @@ namespace calculate
                     textEditor.Text = "-" + text;
                 }
             }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Form3 equationForm = new Form3();
+            equationForm.Show();
         }
 
         private void button_clear_Click(object sender, EventArgs e)
@@ -976,17 +731,78 @@ namespace calculate
             plottingForm.Show();
         }
 
-        private void button12_Click(object sender, EventArgs e)
-        {
-            Form3 equationForm = new Form3();
-            equationForm.Show();
-        }
-
         private void check_E()
         {
             if (textEditor.Text.Contains('E'))
             {
                 disableButtons();
+            }
+        }
+
+        private void trigonometric_function(string operation1, char lastElement, string text)
+        {
+            if (lastElement == '+' || lastElement == '-' || lastElement == '×' || lastElement == '÷')
+            {
+                text = text.Remove(text.Length - 1);
+                textEditor.Text = text;
+            }
+            if (text.Contains('+'))
+            {
+                operation = "+";
+                char op = Convert.ToChar(operation);
+                string last_number = text.Split(op).Last();
+                number2 = (float)Convert.ToDouble(last_number);
+                compute(operation);
+                number3 = double.Parse(textEditor.Text);
+                operation = operation1;
+                string last_number2 = textEditor.Text.Split(op).Last();
+                number2 = (float)Convert.ToDouble(last_number2);
+            }
+            if (text.Contains('-'))
+            {
+                operation = "-";
+                char op = Convert.ToChar(operation);
+                string last_number = text.Split(op).Last();
+                number2 = (float)Convert.ToDouble(last_number);
+                compute(operation);
+                number3 = double.Parse(textEditor.Text);
+                operation = operation1;
+                string last_number2 = textEditor.Text.Split(op).Last();
+                number2 = (float)Convert.ToDouble(last_number2);
+            }
+            if (text.Contains('×'))
+            {
+                operation = "×";
+                char op = Convert.ToChar(operation);
+                string last_number = text.Split(op).Last();
+                number2 = (float)Convert.ToDouble(last_number);
+                compute(operation);
+                number3 = double.Parse(textEditor.Text);
+                operation = operation1;
+                string last_number2 = textEditor.Text.Split(op).Last();
+                number2 = (float)Convert.ToDouble(last_number2);
+            }
+            if (text.Contains('÷'))
+            {
+                operation = "÷";
+                char op = Convert.ToChar(operation);
+                string last_number = text.Split(op).Last();
+                number2 = (float)Convert.ToDouble(last_number);
+                if (number2 - 0 < float.Epsilon)
+                {
+                    textEditor.Text = "0";
+                    number3 = 0;
+                    number2 = 0;
+                    operation = operation1;
+                }
+                else
+                {
+                    compute(operation);
+                    number3 = double.Parse(textEditor.Text);
+                    operation = operation1;
+                    string last_number2 = textEditor.Text.Split(op).Last();
+                    number2 = (float)Convert.ToDouble(last_number2);
+                }
             }
         }
 
