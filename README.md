@@ -11,7 +11,8 @@ The text editor in the main form (Calculator window) only takes numerical values
 
 ![image](https://github.com/nuenen313/plotting-calculator/assets/129689130/0cf568be-8ca7-4a66-87a1-b99c4edd3ce5)
 
-![image](https://github.com/nuenen313/plotting-calculator/assets/129689130/37b3edf3-af1e-47cc-b7d5-0f1dde675636)
+![image](https://github.com/nuenen313/graphing-calculator/assets/129689130/642ab24c-dc18-43ac-9999-c122ff8fb04a)
+
 
 
 ## Quadratic equation solver
