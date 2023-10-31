@@ -1,4 +1,4 @@
-# C# Windows Forms plotting calculator
+# C# Windows Forms graphing calculator
 
 ## Main Window
 Simple Windows Forms calculator with basic functionality (addition, subtraction, multiplication, division), as well as the option to calculate values of trigonometric functions, plotting them in a separate window, and a quadratic equation solver (which returns only real roots of the function). Comma is the decimal separator.
