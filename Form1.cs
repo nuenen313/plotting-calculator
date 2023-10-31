@@ -478,7 +478,7 @@ namespace calculate
                     char lastElement = text[text.Length - 1];
                     if (text.Contains('+') || text.Contains('-') || text.Contains('×') || text.Contains('÷'))
                     {
-                        trigonometric_function("cot", lastElement, text);
+                        trigonometric_function("ctg", lastElement, text);
                     }
                     if (textEditor.Text.Length == 0)
                     {
@@ -488,7 +488,7 @@ namespace calculate
                     {
                         number3 = double.Parse(textEditor.Text);
                     }
-                    textEditor.Text = "ctg(" + Convert.ToString(number3) + ")";
+                    textEditor.Text = "cot(" + Convert.ToString(number3) + ")";
                     textEditor.ReadOnly = true;
                     disableButtons();
                 }
