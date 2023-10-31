@@ -395,7 +395,7 @@
             this.button_tg.Name = "button_tg";
             this.button_tg.Size = new System.Drawing.Size(75, 75);
             this.button_tg.TabIndex = 24;
-            this.button_tg.Text = "tg";
+            this.button_tg.Text = "tan";
             this.button_tg.UseVisualStyleBackColor = false;
             this.button_tg.Click += new System.EventHandler(this.button_tg_Click);
             // 
@@ -409,7 +409,7 @@
             this.button_ctg.Name = "button_ctg";
             this.button_ctg.Size = new System.Drawing.Size(75, 75);
             this.button_ctg.TabIndex = 25;
-            this.button_ctg.Text = "ctg";
+            this.button_ctg.Text = "cot";
             this.button_ctg.UseVisualStyleBackColor = false;
             this.button_ctg.Click += new System.EventHandler(this.button_ctg_Click);
             // 
