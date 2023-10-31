@@ -3,7 +3,7 @@
 ## Main Window
 Simple Windows Forms calculator with basic functionality (addition, subtraction, multiplication, division), as well as the option to calculate values of trigonometric functions, plotting them in a separate window, and a quadratic equation solver (which returns only real roots of the function). Comma is the decimal separator.
 
-![image](https://github.com/nuenen313/plotting-calculator/assets/129689130/c03eac2f-fd4a-4c53-952b-4734b0459063)
+![image](https://github.com/nuenen313/graphing-calculator/assets/129689130/d4e83355-db16-4dc3-8d2d-d68eb3af2612)
 
 
 ## Trigonometric functions
