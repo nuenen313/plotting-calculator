@@ -73,12 +73,12 @@ namespace calculate
                     PlotTitle = "y = cos(x)";
                     break;
                 case "tg":
-                    title = "tg(x)";
-                    PlotTitle = "y = tg(x)";
+                    title = "tan(x)";
+                    PlotTitle = "y = tan(x)";
                     break;
                 case "ctg":
-                    title = "ctg(x)";
-                    PlotTitle = "y = ctg(x)";
+                    title = "cot(x)";
+                    PlotTitle = "y = cot(x)";
                     break;
                 case "quad":
                     text = plot_quadratic(a, b, c);

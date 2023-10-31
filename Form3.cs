@@ -43,6 +43,10 @@ namespace calculate
             {
                 e.SuppressKeyPress = true;
             }
+            else if (textBox_a.Text.Length > 0 && textBox_a.Text[0] != '-' && e.KeyCode == Keys.OemMinus)
+            {
+                e.SuppressKeyPress = true;
+            }
         }
 
         private void textBox_b_KeyDown(object sender, KeyEventArgs e)
@@ -63,6 +67,10 @@ namespace calculate
             {
                 e.SuppressKeyPress = true;
             }
+            else if (textBox_b.Text.Length > 0 && textBox_b.Text[0] != '-' && e.KeyCode == Keys.OemMinus)
+            {
+                e.SuppressKeyPress = true;
+            }
         }
 
         private void textBox_c_KeyDown(object sender, KeyEventArgs e)
@@ -80,6 +88,10 @@ namespace calculate
                 e.SuppressKeyPress = true;
             }
             else if (textBox_c.Text.Contains('-') && e.KeyCode == Keys.OemMinus)
+            {
+                e.SuppressKeyPress = true;
+            }
+            else if (textBox_c.Text.Length > 0 && textBox_c.Text[0] != '-' && e.KeyCode == Keys.OemMinus)
             {
                 e.SuppressKeyPress = true;
             }
