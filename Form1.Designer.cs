@@ -234,7 +234,7 @@
             this.button_comma.Name = "button_comma";
             this.button_comma.Size = new System.Drawing.Size(75, 75);
             this.button_comma.TabIndex = 12;
-            this.button_comma.Text = ",";
+            this.button_comma.Text = ".";
             this.button_comma.UseVisualStyleBackColor = false;
             this.button_comma.Click += new System.EventHandler(this.button_comma_Click);
             // 

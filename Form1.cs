@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,10 @@ namespace calculate
     {
         public Form1()
         {
+            CultureInfo culture = CultureInfo.InvariantCulture;
+            CultureInfo.DefaultThreadCurrentCulture = culture;
+            CultureInfo.DefaultThreadCurrentUICulture = culture;
+
             InitializeComponent();
         }
 
@@ -144,7 +149,7 @@ namespace calculate
                 string text = textEditor.Text;
                 if (text.Length == 0)
                 {
-                    textEditor.AppendText("0,");
+                    textEditor.AppendText("0.");
                 }
                 else
                 {
@@ -152,33 +157,33 @@ namespace calculate
                     int commaCount = 0;
                     foreach (char c in text)
                     {
-                        if (c == ',')
+                        if (c == '.')
                         {
                             commaCount++;
                         }
                     }
                     if (lastCharacter == '+' || lastCharacter == '-' || lastCharacter == '×' || lastCharacter == '÷')
                     {
-                        textEditor.AppendText("0,");
+                        textEditor.AppendText("0.");
                     }
-                    else if (text.EndsWith(","))
+                    else if (text.EndsWith("."))
                     {
 
                     }
-                    else if (text.Contains(","))
+                    else if (text.Contains("."))
                     {
                         if ((text.Contains("+") || text.Contains("-") || text.Contains("×") || text.Contains("÷")))
                         {
                             char op = Convert.ToChar(operation);
                             string last_number = text.Split(op).Last();
 
-                            if (last_number.Contains(','))
+                            if (last_number.Contains('.'))
                             {
                                 textEditor.AppendText("");
                             }
                             else
                             {
-                                textEditor.AppendText(",");
+                                textEditor.AppendText(".");
                             }
                         }
                         else
@@ -188,7 +193,7 @@ namespace calculate
                     }
                     else
                     {
-                        textEditor.AppendText(",");
+                        textEditor.AppendText(".");
                     }
                 }
             }

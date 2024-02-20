@@ -27,15 +27,15 @@ namespace calculate
 
         private void textBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Shift && e.KeyCode == Keys.Oemcomma)
+            if (e.Shift && e.KeyCode == Keys.OemPeriod)
             {
                 e.SuppressKeyPress = true;
             }
-            if (!(e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9 || e.KeyCode == Keys.Oemcomma || e.KeyCode == Keys.Back || e.KeyCode == Keys.OemMinus))
+            if (!(e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9 || e.KeyCode == Keys.OemPeriod || e.KeyCode == Keys.Back || e.KeyCode == Keys.OemMinus))
             {
                 e.SuppressKeyPress = true;
             }
-            else if (textBox_a.Text.Contains(',') && (e.KeyCode == Keys.Oemcomma || e.KeyCode == Keys.OemMinus))
+            else if (textBox_a.Text.Contains('.') && (e.KeyCode == Keys.OemPeriod || e.KeyCode == Keys.OemMinus))
             {
                 e.SuppressKeyPress = true;
             }
@@ -51,15 +51,15 @@ namespace calculate
 
         private void textBox_b_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Shift && e.KeyCode == Keys.Oemcomma)
+            if (e.Shift && e.KeyCode == Keys.OemPeriod)
             {
                 e.SuppressKeyPress = true;
             }
-            if (!(e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9 || e.KeyCode == Keys.Oemcomma || e.KeyCode == Keys.Back || e.KeyCode == Keys.OemMinus))
+            if (!(e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9 || e.KeyCode == Keys.OemPeriod || e.KeyCode == Keys.Back || e.KeyCode == Keys.OemMinus))
             {
                 e.SuppressKeyPress = true;
             }
-            else if (textBox_b.Text.Contains(',') && (e.KeyCode == Keys.Oemcomma || e.KeyCode == Keys.OemMinus))
+            else if (textBox_b.Text.Contains('.') && (e.KeyCode == Keys.OemPeriod || e.KeyCode == Keys.OemMinus))
             {
                 e.SuppressKeyPress = true;
             }
@@ -75,15 +75,15 @@ namespace calculate
 
         private void textBox_c_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Shift && e.KeyCode == Keys.Oemcomma || e.Shift && e.KeyCode == Keys.OemMinus)
+            if (e.Shift && e.KeyCode == Keys.OemPeriod || e.Shift && e.KeyCode == Keys.OemMinus)
             {
                 e.SuppressKeyPress = true;
             }
-            if (!(e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9 || e.KeyCode == Keys.Oemcomma || e.KeyCode == Keys.Back || e.KeyCode == Keys.OemMinus))
+            if (!(e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9 || e.KeyCode == Keys.OemPeriod || e.KeyCode == Keys.Back || e.KeyCode == Keys.OemMinus))
             {
                 e.SuppressKeyPress = true;
             }
-            else if (textBox_c.Text.Contains(',') && (e.KeyCode == Keys.Oemcomma || e.KeyCode==Keys.OemMinus))
+            else if (textBox_c.Text.Contains('.') && (e.KeyCode == Keys.OemPeriod || e.KeyCode==Keys.OemMinus))
             {
                 e.SuppressKeyPress = true;
             }
@@ -109,7 +109,7 @@ namespace calculate
                 operation = "quad";
                 if (textBox_a.Text.Length > 0)
                 {
-                    if (textBox_a.Text == "-" || textBox_a.Text == ",")
+                    if (textBox_a.Text == "-" || textBox_a.Text == ".")
                     {
                        a = 0;
                     }
@@ -124,7 +124,7 @@ namespace calculate
                 }
                 if (textBox_b.Text.Length > 0)
                 {
-                    if (textBox_b.Text == "-" || textBox_b.Text == ",")
+                    if (textBox_b.Text == "-" || textBox_b.Text == ".")
                     {
                         b = 0;
                     }
@@ -139,7 +139,7 @@ namespace calculate
                 }
                 if (textBox_c.Text.Length > 0)
                 {
-                    if (textBox_c.Text == "-" || textBox_c.Text == ",")
+                    if (textBox_c.Text == "-" || textBox_c.Text == ".")
                     {
                         c = 0;
                     }
