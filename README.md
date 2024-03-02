@@ -43,6 +43,3 @@ If the functions has real roots, they will be marked on the plot and their value
 ![image](https://github.com/nuenen313/graphing-calculator/assets/129689130/a4639cd4-9360-4ffe-afad-460ffe55288d)
 
 
-![image](https://github.com/nuenen313/plotting-calculator/assets/129689130/32f023e3-f3fd-463b-aa16-6ddcc7644829)
-
-
