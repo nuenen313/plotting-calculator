@@ -15,6 +15,7 @@ namespace calculate
 {
     public partial class Form1 : Form
     {
+        private Calculator calculator;
         public Form1()
         {
             CultureInfo culture = CultureInfo.InvariantCulture;
@@ -22,6 +23,7 @@ namespace calculate
             CultureInfo.DefaultThreadCurrentUICulture = culture;
 
             InitializeComponent();
+            calculator = new Calculator();
         }
 
         float number1;
@@ -503,40 +505,50 @@ namespace calculate
         private void button_equals_Click(object sender, EventArgs e)
         {
             check_E();
-            if (textEditor.Text.Length > 30)
+            try
             {
-                textEditor.Text = "Value is too large to compute";
-                disableButtons();
+                double result = calculator.CalculateResult(textEditor.Text);
+                textEditor.Text = result.ToString();
             }
-            else
+            catch (Exception ex)
             {
-                textEditor.ReadOnly = false;
-                enableButtons();
-                string total = textEditor.Text;
-                if (operation == null)
-                {
-                    operation = "none";
-                    number1 = float.Parse(total);
-                }
-
-                if (!(operation == "sin" || operation == "cos" || operation == "none" || operation == "rad" || operation == "tg" || operation == "ctg"))
-                {
-                    char op = Convert.ToChar(operation);
-                    string num2 = total.Split(op).Last();
-                    if (num2.Length > 0)
-                    {
-                        number2 = float.Parse(num2);
-                    }
-                    else
-                    {
-                        number2 = 0;
-                    }
-                }
-
-                textEditor.Clear();
-                compute(operation);
-                number1 = 0;
+                textEditor.Text = ex.Message;
             }
+
+            //if (textEditor.Text.Length > 30)
+            //{
+            //    textEditor.Text = "Value is too large to compute";
+            //    disableButtons();
+            //}
+            //else
+            //{
+            //    textEditor.ReadOnly = false;
+            //    enableButtons();
+            //    string total = textEditor.Text;
+            //    if (operation == null)
+            //    {
+            //        operation = "none";
+            //        number1 = float.Parse(total);
+            //    }
+
+            //    if (!(operation == "sin" || operation == "cos" || operation == "none" || operation == "rad" || operation == "tg" || operation == "ctg"))
+            //    {
+            //        char op = Convert.ToChar(operation);
+            //        string num2 = total.Split(op).Last();
+            //        if (num2.Length > 0)
+            //        {
+            //            number2 = float.Parse(num2);
+            //        }
+            //        else
+            //        {
+            //            number2 = 0;
+            //        }
+            //    }
+
+            //    textEditor.Clear();
+            //    compute(operation);
+            //    number1 = 0;
+            //}
         }
 
         private void button11_Click(object sender, EventArgs e)
