@@ -55,7 +55,7 @@ namespace calculate
             this.button_ctg = new System.Windows.Forms.Button();
             this.button_pi = new System.Windows.Forms.Button();
             this.button_e = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.button_quadratic = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textEditor
@@ -441,20 +441,20 @@ namespace calculate
             this.button_e.UseVisualStyleBackColor = false;
             this.button_e.Click += new System.EventHandler(this.button_e_Click);
             // 
-            // button12
+            // button_quadratic
             // 
-            this.button12.AutoSize = true;
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button12.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button12.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button12.Location = new System.Drawing.Point(9, 535);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(399, 62);
-            this.button12.TabIndex = 37;
-            this.button12.Text = "Quadratic equation";
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            this.button_quadratic.AutoSize = true;
+            this.button_quadratic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.button_quadratic.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_quadratic.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_quadratic.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button_quadratic.Location = new System.Drawing.Point(9, 535);
+            this.button_quadratic.Name = "button_quadratic";
+            this.button_quadratic.Size = new System.Drawing.Size(399, 62);
+            this.button_quadratic.TabIndex = 37;
+            this.button_quadratic.Text = "Quadratic equation";
+            this.button_quadratic.UseVisualStyleBackColor = false;
+            this.button_quadratic.Click += new System.EventHandler(this.button12_Click);
             // 
             // Form1
             // 
@@ -462,7 +462,7 @@ namespace calculate
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             this.ClientSize = new System.Drawing.Size(417, 607);
-            this.Controls.Add(this.button12);
+            this.Controls.Add(this.button_quadratic);
             this.Controls.Add(this.button_e);
             this.Controls.Add(this.button_pi);
             this.Controls.Add(this.button_ctg);
@@ -529,7 +529,7 @@ namespace calculate
         private System.Windows.Forms.Button button_ctg;
         private System.Windows.Forms.Button button_pi;
         private System.Windows.Forms.Button button_e;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button_quadratic;
     }
 }
 
