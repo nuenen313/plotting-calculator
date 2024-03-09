@@ -16,6 +16,7 @@ namespace calculate
     public partial class Form1 : Form
     {
         private Calculator calculator;
+
         public Form1()
         {
             CultureInfo culture = CultureInfo.InvariantCulture;
@@ -99,10 +100,9 @@ namespace calculate
         private void button_pi_Click(object sender, EventArgs e)
         {
             check_E();
-            if (textEditor.Text.Length > 30)
+            if (Calculator.CheckTextLength(textEditor, button_clear, button_equals, button_quadratic))
             {
-                textEditor.Text = "Value is too large to compute";
-                disableButtons();
+
             }
             else
             {
@@ -120,10 +120,9 @@ namespace calculate
         private void button_e_Click(object sender, EventArgs e)
         {
             check_E();
-            if (textEditor.Text.Length > 30)
+            if (Calculator.CheckTextLength(textEditor, button_clear, button_equals, button_quadratic))
             {
-                textEditor.Text = "Value is too large to compute";
-                disableButtons();
+
             }
             else
             {
@@ -141,10 +140,9 @@ namespace calculate
         private void button_comma_Click(object sender, EventArgs e)
         {
             check_E();
-            if (textEditor.Text.Length > 30)
+            if (Calculator.CheckTextLength(textEditor, button_clear, button_equals, button_quadratic))
             {
-                textEditor.Text = "Value is too large to compute";
-                disableButtons();
+
             }
             else
             {
@@ -204,10 +202,9 @@ namespace calculate
         private void button_add_Click(object sender, EventArgs e)
         {
             check_E();
-            if (textEditor.Text.Length > 30)
+            if (Calculator.CheckTextLength(textEditor, button_clear, button_equals, button_quadratic))
             {
-                textEditor.Text = "Value is too large to compute";
-                disableButtons();
+
             }
             else
             {
@@ -245,10 +242,9 @@ namespace calculate
         private void button_subtract_Click(object sender, EventArgs e)
         {
             check_E();
-            if (textEditor.Text.Length > 30)
+            if (Calculator.CheckTextLength(textEditor, button_clear, button_equals, button_quadratic))
             {
-                textEditor.Text = "Value is too large to compute";
-                disableButtons();
+
             }
             else
             {
@@ -286,10 +282,9 @@ namespace calculate
         private void button_multiply_Click(object sender, EventArgs e)
         {
             check_E();
-            if (textEditor.Text.Length > 30)
+            if (Calculator.CheckTextLength(textEditor, button_clear, button_equals, button_quadratic))
             {
-                textEditor.Text = "Value is too large to compute";
-                disableButtons();
+
             }
             else
             {
@@ -327,10 +322,9 @@ namespace calculate
         private void button_divide_Click(object sender, EventArgs e)
         {
             check_E();
-            if (textEditor.Text.Length > 30)
+            if (Calculator.CheckTextLength(textEditor, button_clear, button_equals, button_quadratic))
             {
-                textEditor.Text = "Value is too large to compute";
-                disableButtons();
+
             }
             else
             {
@@ -368,10 +362,9 @@ namespace calculate
         private void button_sin_Click(object sender, EventArgs e)
         {
             check_E();
-            if (textEditor.Text.Length > 30)
+            if (Calculator.CheckTextLength(textEditor, button_clear, button_equals, button_quadratic))
             {
-                textEditor.Text = "Value is too large to compute";
-                disableButtons();
+
             }
             else
             {
@@ -394,7 +387,7 @@ namespace calculate
                     }
                     textEditor.Text = "sin(" + Convert.ToString(number3) + ")";
                     textEditor.ReadOnly = true;
-                    disableButtons();
+                    Calculator.DisableAllButtonsExcept(button_clear, button_equals, button_quadratic);
                 }
             }
         }
@@ -402,10 +395,9 @@ namespace calculate
         private void button_cos_Click(object sender, EventArgs e) 
         {
             check_E();
-            if (textEditor.Text.Length > 30)
+            if (Calculator.CheckTextLength(textEditor, button_clear, button_equals, button_quadratic))
             {
-                textEditor.Text = "Value is too large to compute";
-                disableButtons();
+
             }
             else
             {
@@ -429,7 +421,7 @@ namespace calculate
                     textEditor.Text = "cos(" + Convert.ToString(number3) + ")";
                     textEditor.ReadOnly = true;
                     textEditor.ReadOnly = true;
-                    disableButtons();
+                    Calculator.DisableAllButtonsExcept(button_clear, button_equals, button_quadratic);
                 }
             }
         }
@@ -437,10 +429,9 @@ namespace calculate
         private void button_tg_Click(object sender, EventArgs e)
         {
             check_E();
-            if (textEditor.Text.Length > 30)
+            if (Calculator.CheckTextLength(textEditor, button_clear, button_equals, button_quadratic))
             {
-                textEditor.Text = "Value is too large to compute";
-                disableButtons();
+
             }
             else
             {
@@ -463,7 +454,7 @@ namespace calculate
                     }
                     textEditor.Text = "tan(" + Convert.ToString(number3) + ")";
                     textEditor.ReadOnly = true;
-                    disableButtons();
+                    Calculator.DisableAllButtonsExcept(button_clear, button_equals, button_quadratic);
                 }
             }
         }
@@ -471,10 +462,9 @@ namespace calculate
         private void button_ctg_Click(object sender, EventArgs e)
         {
             check_E();
-            if (textEditor.Text.Length > 30)
+            if (Calculator.CheckTextLength(textEditor, button_clear, button_equals, button_quadratic))
             {
-                textEditor.Text = "Value is too large to compute";
-                disableButtons();
+
             }
             else
             {
@@ -497,7 +487,7 @@ namespace calculate
                     }
                     textEditor.Text = "cot(" + Convert.ToString(number3) + ")";
                     textEditor.ReadOnly = true;
-                    disableButtons();
+                    Calculator.DisableAllButtonsExcept(button_clear, button_equals, button_quadratic);
                 }
             }
         }
@@ -505,59 +495,47 @@ namespace calculate
         private void button_equals_Click(object sender, EventArgs e)
         {
             check_E();
-            try
+            if (Calculator.CheckTextLength(textEditor, button_clear, button_equals, button_quadratic))
             {
-                double result = calculator.CalculateResult(textEditor.Text);
-                textEditor.Text = result.ToString();
+
             }
-            catch (Exception ex)
+            else
             {
-                textEditor.Text = ex.Message;
+                textEditor.ReadOnly = false;
+                Calculator.EnableAllButtons();
+                string total = textEditor.Text;
+                if (operation == null)
+                {
+                    operation = "none";
+                    number1 = float.Parse(total);
+                }
+
+                if (!(operation == "sin" || operation == "cos" || operation == "none" || operation == "rad" || operation == "tg" || operation == "ctg"))
+                {
+                    char op = Convert.ToChar(operation);
+                    string num2 = total.Split(op).Last();
+                    if (num2.Length > 0)
+                    {
+                        number2 = float.Parse(num2);
+                    }
+                    else
+                    {
+                        number2 = 0;
+                    }
+                }
+
+                textEditor.Clear();
+                compute(operation);
+                number1 = 0;
             }
-
-            //if (textEditor.Text.Length > 30)
-            //{
-            //    textEditor.Text = "Value is too large to compute";
-            //    disableButtons();
-            //}
-            //else
-            //{
-            //    textEditor.ReadOnly = false;
-            //    enableButtons();
-            //    string total = textEditor.Text;
-            //    if (operation == null)
-            //    {
-            //        operation = "none";
-            //        number1 = float.Parse(total);
-            //    }
-
-            //    if (!(operation == "sin" || operation == "cos" || operation == "none" || operation == "rad" || operation == "tg" || operation == "ctg"))
-            //    {
-            //        char op = Convert.ToChar(operation);
-            //        string num2 = total.Split(op).Last();
-            //        if (num2.Length > 0)
-            //        {
-            //            number2 = float.Parse(num2);
-            //        }
-            //        else
-            //        {
-            //            number2 = 0;
-            //        }
-            //    }
-
-            //    textEditor.Clear();
-            //    compute(operation);
-            //    number1 = 0;
-            //}
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
             check_E();
-            if (textEditor.Text.Length > 30)
+            if (Calculator.CheckTextLength(textEditor, button_clear, button_equals, button_quadratic))
             {
-                textEditor.Text = "Value is too large to compute";
-                disableButtons();
+
             }
             else
             {
@@ -590,16 +568,15 @@ namespace calculate
         {
             textEditor.Clear();
             textEditor.ReadOnly = false;
-            enableButtons();
+            Calculator.EnableAllButtons();
         }
 
         private void button_backspace_Click(object sender, EventArgs e)
         {
             check_E();
-            if (textEditor.Text.Length > 30)
+            if (Calculator.CheckTextLength(textEditor, button_clear, button_equals, button_quadratic))
             {
-                textEditor.Text = "Value is too large to compute";
-                disableButtons();
+
             }
             else
             {
@@ -611,60 +588,6 @@ namespace calculate
                 }
                 textEditor.Text = text;
             }
-        }
-
-        private void disableButtons()
-        {
-            Button1.Enabled = false;
-            Button2.Enabled = false;
-            Button3.Enabled = false;
-            Button4.Enabled = false;
-            Button5.Enabled = false;
-            Button6.Enabled = false;
-            Button7.Enabled = false;
-            Button8.Enabled = false;
-            Button9.Enabled = false;
-            Button10.Enabled = false;
-            button11.Enabled = false;
-            button_comma.Enabled = false;
-            button_add.Enabled = false;
-            button_subtract.Enabled = false;
-            button_multiply.Enabled = false;
-            button_divide.Enabled = false;
-            button_backspace.Enabled = false;
-            button_cos.Enabled = false;
-            button_sin.Enabled = false;
-            button_pi.Enabled = false;
-            button_e.Enabled = false;
-            button_tg.Enabled = false;
-            button_ctg.Enabled = false;
-        }
-
-        private void enableButtons()
-        {
-            Button1.Enabled = true;
-            Button2.Enabled = true;
-            Button3.Enabled = true;
-            Button4.Enabled = true;
-            Button5.Enabled = true;
-            Button6.Enabled = true;
-            Button7.Enabled = true;
-            Button8.Enabled = true;
-            Button9.Enabled = true;
-            Button10.Enabled = true;
-            button11.Enabled = true;
-            button_comma.Enabled = true;
-            button_add.Enabled = true;
-            button_subtract.Enabled = true;
-            button_multiply.Enabled = true;
-            button_divide.Enabled = true;
-            button_backspace.Enabled = true;
-            button_sin.Enabled = true;
-            button_cos.Enabled = true;
-            button_pi.Enabled = true;
-            button_e.Enabled = true;
-            button_tg.Enabled = true;
-            button_ctg.Enabled = true;
         }
 
         public void compute(string operation)
@@ -712,7 +635,7 @@ namespace calculate
                     {
                         textEditor.Text = "x value out of the function domain";
                         textEditor.ReadOnly = true;
-                        disableButtons();
+                        Calculator.DisableAllButtonsExcept(button_clear, button_equals, button_quadratic);
                     }
                     else
                     {
@@ -726,7 +649,7 @@ namespace calculate
                     {
                         textEditor.Text = "x value out of the function domain";
                         textEditor.ReadOnly = true;
-                        disableButtons();
+                        Calculator.DisableAllButtonsExcept(button_clear, button_equals, button_quadratic);
                     }
                     else
                     {
@@ -754,7 +677,7 @@ namespace calculate
         {
             if (textEditor.Text.Contains('E'))
             {
-                disableButtons();
+                Calculator.DisableAllButtonsExcept(button_clear, button_equals, button_quadratic);
             }
         }
 
