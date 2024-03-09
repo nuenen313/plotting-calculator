@@ -1,7 +1,7 @@
 # C# Windows Forms graphing calculator
 
 ## Main Window
-Simple Windows Forms calculator with basic functionality (addition, subtraction, multiplication, division), as well as the option to calculate values of trigonometric functions, plotting them in a separate window, and a quadratic equation solver (which returns only real roots of the function). Period is the decimal separator.
+My first C# project - a simple Windows Forms calculator with basic functionality (addition, subtraction, multiplication, division), as well as the option to calculate values of trigonometric functions, plotting them in a separate window, and a quadratic equation solver (which returns only real roots of the function). Period is the decimal separator.
 
 ![image](https://github.com/nuenen313/graphing-calculator/assets/129689130/49537749-2014-4fe4-8ebe-467290d8f405)
 
