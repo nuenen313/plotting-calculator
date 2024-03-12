@@ -529,7 +529,7 @@ namespace calculate
                 check_E();
                 (result, result2, info) = Calculator.Compute(number1, number2, number3, operation);
 
-                if (info.Length > 0)
+                if (info != null && info.Length > 1)
                 {
                     textEditor.Text = info;
                     Calculator.DisableAllButtonsExcept(button_clear, button_quadratic);
@@ -590,6 +590,7 @@ namespace calculate
         {
             textEditor.Clear();
             textEditor.ReadOnly = false;
+            info = "";
             Calculator.EnableAllButtons();
         }
 
@@ -628,6 +629,7 @@ namespace calculate
 
         private void trigonometric_function(string operation1, char lastElement, string text)
         {
+            info = "";
             if (lastElement == '+' || lastElement == '-' || lastElement == '×' || lastElement == '÷')
             {
                 text = text.Remove(text.Length - 1);
@@ -640,7 +642,7 @@ namespace calculate
                 string last_number = text.Split(op).Last();
                 number2 = (float)Convert.ToDouble(last_number);
                 (result, result2, info) = Calculator.Compute(number1, number2, number3, operation);
-                if (info.Length > 0)
+                if (info != null)
                 {
                     textEditor.Text = info;
                     Calculator.DisableAllButtonsExcept(button_clear, button_quadratic);
@@ -661,7 +663,7 @@ namespace calculate
                 string last_number = text.Split(op).Last();
                 number2 = (float)Convert.ToDouble(last_number);
                 (result, result2, info) = Calculator.Compute(number1, number2, number3, operation);
-                if (info.Length > 0)
+                if (info != null && info.Length > 1)
                 {
                     textEditor.Text = info;
                     Calculator.DisableAllButtonsExcept(button_clear, button_quadratic);
@@ -683,7 +685,7 @@ namespace calculate
                 string last_number = text.Split(op).Last();
                 number2 = (float)Convert.ToDouble(last_number);
                 (result, result2, info) = Calculator.Compute(number1, number2, number3, operation);
-                if (info.Length > 0)
+                if (info != null && info.Length > 1)
                 {
                     textEditor.Text = info;
                     Calculator.DisableAllButtonsExcept(button_clear, button_quadratic);
@@ -714,7 +716,7 @@ namespace calculate
                 else
                 {
                     (result, result2, info) = Calculator.Compute(number1, number2, number3, operation);
-                    if (info.Length > 0)
+                    if (info != null && info.Length > 1)
                     {
                         textEditor.Text = info;
                         Calculator.DisableAllButtonsExcept(button_clear, button_quadratic);
