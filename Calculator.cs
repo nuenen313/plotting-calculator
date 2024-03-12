@@ -64,6 +64,7 @@ namespace calculate
 
         public static (float, double, string) Compute(float number1, float number2, double number3, string operation)
         {
+            info = "";
             switch (operation)
             {
                 case "+":
