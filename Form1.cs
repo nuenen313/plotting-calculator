@@ -32,6 +32,7 @@ namespace calculate
         public static double number3;
         public static double result2;
         public static string operation;
+        public static string info = "";
         float result;
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
@@ -525,7 +526,28 @@ namespace calculate
                 }
 
                 textEditor.Clear();
-                compute(operation);
+                check_E();
+                (result, result2, info) = Calculator.Compute(number1, number2, number3, operation);
+
+                if (info.Length > 0)
+                {
+                    textEditor.Text = info;
+                    Calculator.DisableAllButtonsExcept(button_clear, button_quadratic);
+                    info = "";
+                }
+                else
+                {
+                    if (operation == "sin" || operation == "cos" || operation == "none" || operation == "rad" || operation == "tg" || operation == "ctg")
+                    {
+                        textEditor.Text = result2.ToString();
+                        Calculator.Plot();
+                    }
+                    else
+                    {
+                        textEditor.Text = result.ToString();
+                    }
+                }
+
                 number1 = 0;
             }
         }
@@ -590,83 +612,6 @@ namespace calculate
             }
         }
 
-        public void compute(string operation)
-        {
-            check_E();
-            switch (operation)
-            {
-                case "+":
-                    result = number1 + number2;
-                    textEditor.Text = result.ToString();
-                    break;
-                case "-":
-                    result = number1 - number2;
-                    textEditor.Text = result.ToString();
-                    break;
-                case "×":
-                    result = number1 * number2;
-                    textEditor.Text = result.ToString();
-                    break;
-                case "÷":
-                    if (number2 == 0)
-                    {
-                        textEditor.Text = "";
-                        number3 = number1;
-                        break;
-                    }
-                    else
-                    {
-                        result = number1 / number2;
-                        textEditor.Text = result.ToString();
-                    }
-                    break;
-                case "sin":
-                    result2 = Math.Sin(number3 * Math.PI / 180);
-                    textEditor.Text = result2.ToString();
-                    plot();
-                    break;
-                case "cos":
-                    result2 = Math.Cos(number3 * Math.PI / 180);
-                    textEditor.Text= result2.ToString();
-                    plot();
-                    break;
-                case "tg":
-                    if (number3%90 == 0)
-                    {
-                        textEditor.Text = "x value out of the function domain";
-                        textEditor.ReadOnly = true;
-                        Calculator.DisableAllButtonsExcept(button_clear, button_equals, button_quadratic);
-                    }
-                    else
-                    {
-                        result2 = Math.Round(Math.Tan(number3 * Math.PI / 180), 10);
-                        textEditor.Text = result2.ToString();
-                        plot();
-                    }
-                    break;
-                case "ctg":
-                    if (number3%180 == 0 || number3 == 0)
-                    {
-                        textEditor.Text = "x value out of the function domain";
-                        textEditor.ReadOnly = true;
-                        Calculator.DisableAllButtonsExcept(button_clear, button_equals, button_quadratic);
-                    }
-                    else
-                    {
-                        result2 = Math.Round(1 / Math.Tan(number3 * Math.PI / 180), 10);
-                        textEditor.Text = result2.ToString();
-                        plot();
-                    }
-                    break;
-                case "none":
-                    result = number1;
-                    textEditor.Text = result.ToString();
-                    break;
-                default:
-                    break;
-            }
-        }
-
         public void plot()
         {
             Form2 plottingForm = new Form2();
@@ -694,7 +639,16 @@ namespace calculate
                 char op = Convert.ToChar(operation);
                 string last_number = text.Split(op).Last();
                 number2 = (float)Convert.ToDouble(last_number);
-                compute(operation);
+                (result, result2, info) = Calculator.Compute(number1, number2, number3, operation);
+                if (info.Length > 0)
+                {
+                    textEditor.Text = info;
+                    Calculator.DisableAllButtonsExcept(button_clear, button_quadratic);
+                }
+                else
+                {
+                    textEditor.Text = result.ToString();
+                }
                 number3 = double.Parse(textEditor.Text);
                 operation = operation1;
                 string last_number2 = textEditor.Text.Split(op).Last();
@@ -706,7 +660,17 @@ namespace calculate
                 char op = Convert.ToChar(operation);
                 string last_number = text.Split(op).Last();
                 number2 = (float)Convert.ToDouble(last_number);
-                compute(operation);
+                (result, result2, info) = Calculator.Compute(number1, number2, number3, operation);
+                if (info.Length > 0)
+                {
+                    textEditor.Text = info;
+                    Calculator.DisableAllButtonsExcept(button_clear, button_quadratic);
+                    info = "";
+                }
+                else
+                {
+                    textEditor.Text = result.ToString();
+                }
                 number3 = double.Parse(textEditor.Text);
                 operation = operation1;
                 string last_number2 = textEditor.Text.Split(op).Last();
@@ -718,7 +682,17 @@ namespace calculate
                 char op = Convert.ToChar(operation);
                 string last_number = text.Split(op).Last();
                 number2 = (float)Convert.ToDouble(last_number);
-                compute(operation);
+                (result, result2, info) = Calculator.Compute(number1, number2, number3, operation);
+                if (info.Length > 0)
+                {
+                    textEditor.Text = info;
+                    Calculator.DisableAllButtonsExcept(button_clear, button_quadratic);
+                    info = "";
+                }
+                else
+                {
+                    textEditor.Text = result.ToString();
+                }
                 number3 = double.Parse(textEditor.Text);
                 operation = operation1;
                 string last_number2 = textEditor.Text.Split(op).Last();
@@ -739,7 +713,17 @@ namespace calculate
                 }
                 else
                 {
-                    compute(operation);
+                    (result, result2, info) = Calculator.Compute(number1, number2, number3, operation);
+                    if (info.Length > 0)
+                    {
+                        textEditor.Text = info;
+                        Calculator.DisableAllButtonsExcept(button_clear, button_quadratic);
+                        info = "";
+                    }
+                    else
+                    {
+                        textEditor.Text = result.ToString();
+                    }
                     number3 = double.Parse(textEditor.Text);
                     operation = operation1;
                     string last_number2 = textEditor.Text.Split(op).Last();
